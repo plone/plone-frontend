@@ -10,14 +10,17 @@ Plone frontend [Docker](https://docker.com) images using Node 14.
 
 ## Using this image
 
-### Simple usage
+### Using Docker compose
+
+Use the example setup provided at [(examples/nginx-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/nginx-volto-plone/docker-compose.yml)
+
+Start the stack with `docker-compose`
 
 ```shell
-docker run -p 3000:3000 plone/plone-frontend:14.0.0-alpha
+docker-compose up -d
 ```
 
 Then point your browser at http://localhost:3000 and you should see the default page for the Plone frontend.
-
 
 ## Contribute
 
