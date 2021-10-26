@@ -35,6 +35,8 @@ services:
       POSTGRES_USER: plone
       POSTGRES_PASSWORD: plone
       POSTGRES_DB: plone
+    volumes:
+    - data:/var/lib/postgresql/data
     ports:
     - "5432:5432"
 
