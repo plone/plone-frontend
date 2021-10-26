@@ -10,17 +10,16 @@ Plone frontend [Docker](https://docker.com) images using Node 14.
 
 ## Using this image
 
-### Using Docker compose
+### Using Docker Compose
 
-Use the example setup provided at [(examples/webserver-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone/docker-compose.yml)
+We provide examples of Docker stacks to test this image:
 
-Start the stack with `docker-compose`
+* [(examples/webserver-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone/README.md)
 
-```shell
-docker-compose up -d
-```
+* [(examples/webserver-volto-plone-zeo)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-zeo/README.md)
 
-Then point your browser at http://localhost:3000 and you should see the default page for the Plone frontend.
+* [(examples/webserver-volto-plone-postgres)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-postgres/README.md)
+
 
 ## Contribute
 
