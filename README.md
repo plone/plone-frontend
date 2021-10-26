@@ -12,7 +12,7 @@ Plone frontend [Docker](https://docker.com) images using Node 14.
 
 ### Using Docker Compose
 
-We provide examples of Docker stacks to test this image:
+We provide examples of Docker Compose configurations to test this image:
 
 * [(examples/webserver-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone/README.md)
 

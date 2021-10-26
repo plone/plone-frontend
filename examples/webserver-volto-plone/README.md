@@ -1,6 +1,6 @@
-# Stack with Webserver (Nginx), Frontend(Volto), and Plone Backend
+# Setup with Webserver (Nginx), Frontend(Volto), and Plone Backend
 
-## Setup
+## Intro
 
 Clone this repository and go to the `examples/webserver-volto-plone` folder
 
@@ -9,13 +9,13 @@ git clone https://github.com/plone/plone-frontend.git
 cd plone-frontend/examples/webserver-volto-plone
 ```
 
-Start the stack with `docker-compose`
+Start the solution with `docker-compose` (or `docker compose` for newer versions)
 
 ```shell
 docker-compose up -d
 ```
 
-## Setup Plone backend
+## Configure Plone backend
 
 In a browser, go to [http://localhost:8080/@@plone-addsite?site_id=Plone&advanced=1](http://localhost:8080/@@plone-addsite?site_id=Plone&advanced=1 and create a new site:
 
