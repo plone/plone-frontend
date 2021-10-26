@@ -1,7 +1,7 @@
 version: "3"
 services:
 
-  nginx:
+  webserver:
     image: nginx
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf

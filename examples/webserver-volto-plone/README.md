@@ -1,12 +1,12 @@
-# Stack with Nginx Volto Plone
+# Stack with Webserver (Nginx), Frontend(Volto), and Plone Backend
 
 ## Setup
 
-Clone this repository and go to the `examples/nginx-volto-plone` folder
+Clone this repository and go to the `examples/webserver-volto-plone` folder
 
 ```shell
 git clone https://github.com/plone/plone-frontend.git
-cd plone-frontend/examples/nginx-volto-plone
+cd plone-frontend/examples/webserver-volto-plone
 ```
 
 Start the stack with `docker-compose`

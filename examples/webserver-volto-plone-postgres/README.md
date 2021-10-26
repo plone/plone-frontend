@@ -1,12 +1,12 @@
-# Stack with Nginx Volto Plone and ZEO
+# Stack with Webserver (Nginx), Frontend(Volto), Plone Backend and Database Server (Postgres)
 
 ## Setup
 
-Clone this repository and go to the `examples/nginx-volto-plone-zeo` folder
+Clone this repository and go to the `examples/webserver-volto-plone-postgres` folder
 
 ```shell
 git clone https://github.com/plone/plone-frontend.git
-cd plone-frontend/examples/nginx-volto-plone-zeo
+cd plone-frontend/examples/webserver-volto-plone-postgres
 ```
 
 Start the stack with `docker-compose`

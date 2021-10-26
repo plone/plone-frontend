@@ -12,7 +12,7 @@ Plone frontend [Docker](https://docker.com) images using Node 14.
 
 ### Using Docker compose
 
-Use the example setup provided at [(examples/nginx-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/nginx-volto-plone/docker-compose.yml)
+Use the example setup provided at [(examples/webserver-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone/docker-compose.yml)
 
 Start the stack with `docker-compose`
 
