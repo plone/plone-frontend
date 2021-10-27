@@ -14,12 +14,9 @@ Plone frontend [Docker](https://docker.com) images using Node 14.
 
 We provide examples of Docker Compose configurations to test this image:
 
-* [(examples/webserver-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone/README.md)
-
-* [(examples/webserver-volto-plone-zeo)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-zeo/README.md)
-
-* [(examples/webserver-volto-plone-postgres)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-postgres/README.md)
-
+- [(examples/webserver-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone/README.md)
+- [(examples/webserver-volto-plone-zeo)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-zeo/README.md)
+- [(examples/webserver-volto-plone-postgres)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-postgres/README.md)
 
 ## Contribute
 
@@ -29,7 +26,6 @@ We provide examples of Docker Compose configurations to test this image:
 
 Please **DO NOT** commit to main directly. Even for the smallest and most trivial fix.
 **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
-
 
 ## License
 

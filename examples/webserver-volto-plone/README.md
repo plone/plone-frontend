@@ -21,4 +21,4 @@ In a browser, go to [http://localhost:8080/@@plone-addsite?site_id=Plone&advance
 
 ![Plone site creation](./plone-setup.png "Plone site creation")
 
-After the Plone site is created, go to http://localhost/ and you should see the site.
+After the Plone site is created, go to `http://localhost/` and you should see the site.
