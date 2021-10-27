@@ -1,0 +1,31 @@
+version: "3"
+services:
+
+  webserver:
+    image: nginx
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend
+      - frontend
+    ports:
+    - "80:80"
+
+  frontend:
+    image: plone/plone-frontend:14.0.0-alpha-node14
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+    ports:
+    - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    image: plone/plone-backend:6.0.0a1-python39
+    volumes:
+      - data:/data      
+    ports:
+    - "8080:8080"
+
+volumes:
+  data: {}
