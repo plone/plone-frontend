@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 RUN apt-get update \
     && buildDeps="python3 build-essential" \
-    && apt-get install -y --no-install-recommends $buildDeps\
+    && apt-get install -y --no-install-recommends $buildDeps \
     && rm -rf /var/lib/apt/lists/*
 
 # Install app dependencies
@@ -27,6 +27,12 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.description="Plone frontend image" \
       org.label-schema.vendor="Plone Foundation" \
       org.label-schema.docker.cmd="docker run -d -p 3000:3000 plone/plone-frontend:14.0.0-alpha"
+
+RUN apt-get update \
+    && buildDeps="busybox" \
+    && apt-get install -y --no-install-recommends $buildDeps \
+    && busybox --install -s \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src
 
