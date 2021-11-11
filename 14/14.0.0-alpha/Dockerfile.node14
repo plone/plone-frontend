@@ -1,27 +1,37 @@
 FROM node:14-slim as base
 FROM base as builder
 
-# Create app directory
-WORKDIR /usr/src/app
+ENV VOLTO_MAJOR=14
+ENV VOLTO_MINOR=0
+ENV VOLTO_POINT=0
+ENV VOLTO_SUFFIX=-alpha.32
+ENV VOLTO_VERSION=${VOLTO_MAJOR}.${VOLTO_MINOR}.${VOLTO_POINT}${VOLTO_SUFFIX}
 
 RUN apt-get update \
     && buildDeps="python3 build-essential" \
     && apt-get install -y --no-install-recommends $buildDeps \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir build && chown -R node:node build \
+    && npm install --no-audit --no-fund -g yo @plone/generator-volto
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY src/package.json src/yarn.lock  ./
-RUN yarn install --prod
+USER node
+WORKDIR /build
 
-# Bundle app source
-COPY ./src .
+# Generate new volto app
+RUN yo @plone/volto \
+    plone-frontend \
+    --description "Plone frontend using Volto" \
+    --skip-addons \
+    --skip-install \
+    --skip-workspaces \
+    --volto=${VOLTO_VERSION} \
+    --no-interactive
 
-RUN yarn build
+RUN cd plone-frontend \
+    && yarn install --prod \
+    && yarn build
 
 FROM base
-
 LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.name="plone-frontend" \
       org.label-schema.description="Plone frontend image" \
@@ -34,12 +44,9 @@ RUN apt-get update \
     && busybox --install -s \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /usr/src
+USER node
+COPY --from=builder /build/plone-frontend/ /app/
 
-COPY --from=builder /usr/src/app .
-
-WORKDIR /usr/src/app
-
+WORKDIR /app
 EXPOSE 3000
-
 CMD ["yarn", "start:prod"]
