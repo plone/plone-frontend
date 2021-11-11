@@ -6,6 +6,7 @@ Plone frontend [Docker](https://docker.com) images using Node 14.
 
 ## Supported tags and respective Dockerfile links
 
+- `latest, 13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/main/13/13.15/13.15.1/Dockerfile.node14)
 - `14.0.0-alpha, 14.0.0-alpha-node14` [(14.0/14.0.0-alpha/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/main/14/14.0.0-alpha/Dockerfile.node14)
 
 ## Using this image
