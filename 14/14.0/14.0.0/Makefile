@@ -9,10 +9,10 @@ MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
 
 IMAGE_NAME=plone/plone-frontend
-IMAGE_TAG=13.15.1
-IMAGE_VARIATIONS=node14
-IMAGE_DEFAULT_VARIATION=node14
-IMAGE_ADDITIONAL_TAGS=13 13.15
+IMAGE_TAG=14.0.0
+IMAGE_VARIATIONS=node16 node14
+IMAGE_DEFAULT_VARIATION=node16
+IMAGE_ADDITIONAL_TAGS=14.0 14 latest
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
