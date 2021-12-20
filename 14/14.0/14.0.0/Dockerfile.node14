@@ -28,7 +28,7 @@ RUN yo @plone/volto \
     --no-interactive
 
 RUN cd plone-frontend \
-    && yarn install --prod \
+    && yarn install \
     && yarn build
 
 FROM base
