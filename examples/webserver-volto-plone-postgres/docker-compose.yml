@@ -12,7 +12,7 @@ services:
     - "80:80"
 
   frontend:
-    image: plone/plone-frontend:14.0.0-alpha-node14
+    image: plone/plone-frontend:latest
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -21,7 +21,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a1-python39
+    image: plone/plone-backend:6.0.0a2-python39
     environment:
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
     ports:
