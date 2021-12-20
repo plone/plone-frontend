@@ -1,13 +1,14 @@
 # plone-frontend
 
-Plone frontend [Docker](https://docker.com) images using Node 14.
+Plone frontend [Docker](https://docker.com) images using Node.
 
 > **NOTE**: These images are not yet officially supported by the Plone Community.
 
 ## Supported tags and respective Dockerfile links
 
-- `latest, 13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/main/13/13.15/13.15.1/Dockerfile.node14)
-- `14.0.0-alpha, 14.0.0-alpha-node14` [(14.0/14.0/14.0.0-alpha/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/main/14/14.0/14.0.0-alpha/Dockerfile.node14)
+- `latest, 14, 14.0, 14.0.0, 14.0.0-node16` [(14.0/14.0/14.0.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/14/14.0/14.0.0/Dockerfile.node16)
+- `14.0.0-node14` [(14.0/14.0/14.0.0/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/main/14/14.0/14.0.0/Dockerfile.node14)
+- `13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/main/13/13.15/13.15.1/Dockerfile.node14)
 
 ## Using this image
 
