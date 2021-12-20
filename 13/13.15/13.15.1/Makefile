@@ -12,7 +12,7 @@ IMAGE_NAME=plone/plone-frontend
 IMAGE_TAG=13.15.1
 IMAGE_VARIATIONS=node14
 IMAGE_DEFAULT_VARIATION=node14
-IMAGE_ADDITIONAL_TAGS=13.15 latest
+IMAGE_ADDITIONAL_TAGS=13 13.15
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -52,5 +52,5 @@ push-images:  # Push docker image to dockerhub
 	$(foreach VARIATION,$(IMAGE_VARIATIONS),docker push $(IMAGE_NAME):$(IMAGE_TAG)-${VARIATION};)
 
 .PHONY: release
-release: build-images push-images # Build and push the image to docker hub
+release: build-images tag-images push-images # Build and push the image to docker hub
 	@echo "Releasing $(IMAGE_NAME):$(IMAGE_TAG)"
