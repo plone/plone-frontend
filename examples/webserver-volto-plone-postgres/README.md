@@ -17,7 +17,7 @@ docker-compose up -d
 
 ## Configure Plone backend
 
-In a browser, go to [http://localhost:8080/@@plone-addsite?site_id=Plone&advanced=1](http://localhost:8080/@@plone-addsite?site_id=Plone&advanced=1) and create a new site:
+In a browser, go to [http://localhost:8080/@@plone-addsite?site_id=Plone](http://localhost:8080/@@plone-addsite?site_id=Plone) and create a new site:
 
 ![Plone site creation](./plone-setup.png "Plone site creation")
 

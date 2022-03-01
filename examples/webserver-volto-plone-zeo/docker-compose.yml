@@ -21,7 +21,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a2-python39
+    image: plone/plone-backend:6.0.0a3-python39
     environment:
       ZEO_ADDRESS: db:8100
     ports:
