@@ -11,7 +11,7 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ### Next version (15.0)
 
-- `15.0.0-alpha, 15.0.0-alpha.10, 15.0.0-alpha.10-node16` [(/15/15.0/15.0.0-alpha.10/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.0/15.0.0-alpha.10/Dockerfile.node16)
+- `15.0.0-alpha, 15.0.0-alpha.11, 15.0.0-alpha.11-node16` [(/15/15.0/15.0.0-alpha.11/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.0/15.0.0-alpha.11/Dockerfile.node16)
 
 ### Older tags
 
