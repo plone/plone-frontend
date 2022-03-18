@@ -6,12 +6,14 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ## Supported tags and respective Dockerfile links
 
-- `latest, 15, 15.0, 15.0.0, 15.0.0-node16` [(15.0/15.0/15.0.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.0/15.0.0/Dockerfile.node16)
-- `14, 14.10, 14.10.0, 14.10.0-node16` [(14.10/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/14/14.10/14.10.0/Dockerfile.node16)
+- `latest, 15, 15.2, 15.2.0, 15.2.0-node16` [(15/15.2/15.2.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.2/15.2.0/Dockerfile.node16)
+- `14, 14.10, 14.10.0, 14.10.0-node16` [(14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/14/14.10/14.10.0/Dockerfile.node16)
 - `13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/main/13/13.15/13.15.1/Dockerfile.node14)
 
 ### Older tags
 
+- `15.1, 15.1.2, 15.1.2-node16` [(/15/15.1/15.1.2/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.1/15.1.2/Dockerfile.node16)
+- `15.0, 15.0.0, 15.0.0-node16` [(/15/15.0/15.0.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.0/15.0.0/Dockerfile.node16)
 - `14.10, 14.10.0, 14.10.0-node16` [(/14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/14/14.10/14.10.0/Dockerfile.node16)
 - `14.9, 14.9.0, 14.9.0-node16` [(/14/14.9/14.9.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/14/14.9/14.9.0/Dockerfile.node16)
 - `14.8, 14.8.1, 14.8.1-node16` [(/14/14.8/14.8.1/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/14/14.8/14.8.1/Dockerfile.node16)
