@@ -12,7 +12,7 @@ IMAGE_NAME=plone/plone-frontend
 IMAGE_TAG=15.1.2
 IMAGE_VARIATIONS=node16
 IMAGE_DEFAULT_VARIATION=node16
-IMAGE_ADDITIONAL_TAGS=
+IMAGE_ADDITIONAL_TAGS=15.1
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
