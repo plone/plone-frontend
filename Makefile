@@ -39,7 +39,7 @@ current-version: # Print current version
 
 create-tag: # Create a new tag using git
 	@echo "Creating new tag $(VERSION)"
-	if git show-ref --tags v$(VERSION) --quiet; then echo "$(VERSION) already exists";else git tag -a v$(VERSION) -m "Release $(VERSION)" && git push --tags;fi
+	if git show-ref --tags v$(VERSION) --quiet; then echo "$(VERSION) already exists";else git tag -a v$(VERSION) -m "Release $(VERSION)" && git push && git push --tags;fi
 
 commit-release: # Commit new version change and create tag
 	@echo "Commiting changes"
