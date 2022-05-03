@@ -6,9 +6,10 @@ on:
       - 'main'
     paths:
       - "README.md"
+      - .github/workflows/description.yml
 
 jobs:
-  docker:
+  update-description:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,3 +23,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: plone/plone-frontend
+          readme-filepath: README.md
