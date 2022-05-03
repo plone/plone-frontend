@@ -4,7 +4,7 @@ FROM base as builder
 ENV VOLTO_MAJOR=15
 ENV VOLTO_MINOR=0
 ENV VOLTO_PATCH=0
-ENV VOLTO_PRERELEASE=alpha.1
+ENV VOLTO_PRERELEASE=
 ENV VOLTO_VERSION=${VOLTO_MAJOR}.${VOLTO_MINOR}.${VOLTO_PATCH}${VOLTO_PRERELEASE}
 
 RUN apt-get update \
@@ -35,8 +35,7 @@ FROM base
 LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.name="plone-frontend" \
       org.label-schema.description="Plone frontend image" \
-      org.label-schema.vendor="Plone Foundation" \
-      org.label-schema.docker.cmd="docker run -d -p 3000:3000 plone/plone-frontend:15.0.0-alpha.1"
+      org.label-schema.vendor="Plone Foundation"
 
 RUN apt-get update \
     && buildDeps="busybox" \
