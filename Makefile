@@ -17,6 +17,9 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
+# Current version
+VERSION=`python helpers/version.py`
+
 .PHONY: all
 all: help
 
@@ -30,3 +33,10 @@ help: # This help message
 build-image:  # Build Docker Image
 	@echo "Building $(IMAGE_NAME)"
 	docker build . -t $(IMAGE_NAME)
+
+current-version: # Print current version
+	@echo "Current version: $(VERSION)"
+
+create-tag: # Create a new tag using git
+	@echo "Creating new tag $(VERSION)"
+	if git show-ref --tags v$(VERSION) --quiet; then echo "$(VERSION) already exists";else git tag -a v$(VERSION) -m "Release $(VERSION)";fi
