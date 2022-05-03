@@ -21,7 +21,9 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a3-python39
+    image: plone/plone-backend:6.0.0a4
+    environment:
+      SITE: Plone
     volumes:
       - data:/data
     ports:

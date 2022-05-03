@@ -15,10 +15,6 @@ Start the solution with `docker-compose` (or `docker compose` for newer versions
 docker-compose up -d
 ```
 
-## Configure Plone backend
+## Access the site
 
-In a browser, go to [http://localhost:8080/@@plone-addsite?site_id=Plone](http://localhost:8080/@@plone-addsite?site_id=Plone) and create a new site:
-
-![Plone site creation](./plone-setup.png "Plone site creation")
-
-After the Plone site is created, go to `http://localhost/` and you should see the site.
+After startup, go to `http://localhost/` and you should see the site.

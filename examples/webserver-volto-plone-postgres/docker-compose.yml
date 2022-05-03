@@ -21,8 +21,9 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a3-python39
+    image: plone/plone-backend:6.0.0a4
     environment:
+      SITE: Plone
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
     ports:
     - "8080:8080"
