@@ -6,17 +6,19 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ## Supported tags and respective Dockerfile links
 
-- `latest, 15, 15.5, 15.5.0, 15.5.0-node16` [(15/15.5/15.5.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.5/15.5.0/Dockerfile.node16)
-- `14, 14.10, 14.10.0, 14.10.0-node16` [(14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.10/14.10.0/Dockerfile.node16)
-- `13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/13/13.15/13.15.1/Dockerfile.node14)
+- `latest, 15, 15.8, 15.8.0` [(15.8.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.8.0/Dockerfile)
+
 
 ### Older tags
 
-- `15.4, 15.4.1, 15.4.1-node16` [(15/15.4/15.4.1/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.4/15.4.1/Dockerfile.node16)
-- `15.3, 15.3.0, 15.3.0-node16` [(15/15.3/15.3.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.3/15.3.0/Dockerfile.node16)
-- `15.2, 15.2.3, 15.2.3-node16` [(15/15.2/15.2.3/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.2/15.2.3/Dockerfile.node16)
-- `15.1, 15.1.2, 15.1.2-node16` [(/15/15.1/15.1.2/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.1/15.1.2/Dockerfile.node16)
-- `15.0, 15.0.0, 15.0.0-node16` [(/15/15.0/15.0.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/main/15/15.0/15.0.0/Dockerfile.node16)
+- `15.7, 15.7.0` [(15.7.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.7.0/Dockerfile)
+- `15.6, 15.6.1` [(15.6.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.6.1/Dockerfile)
+- `15.5, 15.5.0` [(15.5.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.5.0/Dockerfile)
+- `15.4, 15.4.1` [(15.4.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.4.1/Dockerfile)
+- `15.3, 15.3.0` [(15.3.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.3.0/Dockerfile)
+- `15.2, 15.2.3` [(15.2.3/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.2.3/Dockerfile)
+- `15.1, 15.1.2` [(15.1.2/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.1.2/Dockerfile)
+- `15.0, 15.0.0` [(15.0.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.0.0/Dockerfile)
 - `14.10, 14.10.0, 14.10.0-node16` [(/14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.10/14.10.0/Dockerfile.node16)
 - `14.9, 14.9.0, 14.9.0-node16` [(/14/14.9/14.9.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.9/14.9.0/Dockerfile.node16)
 - `14.8, 14.8.1, 14.8.1-node16` [(/14/14.8/14.8.1/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.8/14.8.1/Dockerfile.node16)
@@ -36,7 +38,7 @@ Plone frontend [Docker](https://docker.com) images using Node.
 - `14.0, 14.0.2, 14.0.2-node16` [(/14/14.0/14.0.2/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.0/14.0.2/Dockerfile.node16)
 - `14.0.1, 14.0.1-node16` [(/14/14.0/14.0.1/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.0/14.0.1/Dockerfile.node16)
 - `14.0.0, 14.0.0-node16` [(/14/14.0/14.0.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.0/14.0.0/Dockerfile.node16)
-
+- `13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/13/13.15/13.15.1/Dockerfile.node14)
 
 ## Using this image
 
