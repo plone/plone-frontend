@@ -55,6 +55,7 @@ We provide examples of Docker Compose configurations to test this image:
 - [Documentation](https://github.com/plone/plone-frontend/)
 
 Please **DO NOT** commit to main directly. Even for the smallest and most trivial fix.
+
 **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
 
 ## License
