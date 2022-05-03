@@ -21,6 +21,9 @@ jobs:
           # list of Docker images to use as base name for tags
           images: |
             plone/plone-frontend
+          # update label with proper version number
+          labels: |
+            org.label-schema.docker.cmd=docker run -d -p 3000:3000 plone/plone-frontend:{{version}}
           # generate Docker tags based on the following events/attributes
           tags: |
             type=ref,event=branch
@@ -30,6 +33,7 @@ jobs:
             type=semver,pattern={{major}}
             type=sha
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
