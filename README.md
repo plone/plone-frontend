@@ -8,7 +8,6 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 - `latest, 15, 15.8, 15.8.0` [(15.8.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.8.0/Dockerfile)
 
-
 ### Older tags
 
 - `15.7, 15.7.0` [(15.7.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.7.0/Dockerfile)
@@ -40,15 +39,9 @@ Plone frontend [Docker](https://docker.com) images using Node.
 - `14.0.0, 14.0.0-node16` [(/14/14.0/14.0.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.0/14.0.0/Dockerfile.node16)
 - `13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/13/13.15/13.15.1/Dockerfile.node14)
 
-## Using this image
+## Usage
 
-### Using Docker Compose
-
-We provide examples of Docker Compose configurations to test this image:
-
-- [(examples/webserver-volto-plone)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone/README.md)
-- [(examples/webserver-volto-plone-zeo)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-zeo/README.md)
-- [(examples/webserver-volto-plone-postgres)](https://github.com/plone/plone-frontend/blob/main/examples/webserver-volto-plone-postgres/README.md)
+Please refer to the [Official Plone Documentation](https://6.dev-docs.plone.org/install/containers/images/frontend.html) for further documentation and examples.
 
 ## Contribute
 
@@ -56,7 +49,7 @@ We provide examples of Docker Compose configurations to test this image:
 - [Source Code](https://github.com/plone/plone-frontend/)
 - [Documentation](https://github.com/plone/plone-frontend/)
 
-Please **DO NOT** commit to main directly. Even for the smallest and most trivial fix.
+Please **DO NOT** commit to version branches directly. Even for the smallest and most trivial fix.
 
 **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
 
