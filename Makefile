@@ -9,6 +9,7 @@ MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
 
 IMAGE_NAME=plone/plone-frontend
+NIGHTLY_IMAGE_TAG=nightly
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -45,3 +46,8 @@ commit-release: # Commit new version change and create tag
 	@echo "Commiting changes"
 	@git commit -am "Use Volto $(VERSION)"
 	make create-tag
+
+.PHONY: build-image-edge
+build-image-nightly:  ## Build Docker Image Nightly
+	@echo "Building $(IMAGE_NAME):$(NIGHTLY_IMAGE_TAG)"
+	@docker build . -t $(IMAGE_NAME):$(NIGHTLY_IMAGE_TAG) -f Dockerfile.nightly
