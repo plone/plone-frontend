@@ -14,6 +14,10 @@ def extract_version(path: Path) -> str:
     version_info = {}
     for match in matches:
         version_info[match[0].lower()] = match[1]
-    return f"{version_info['major']}.{version_info['minor']}.{version_info['patch']}{version_info['prerelease']}"
+    version = f"{version_info['major']}.{version_info['minor']}.{version_info['patch']}"
+    if version_info.get("prerelease"):
+        version = f"{version}-{version_info['prerelease']}"
+    return version
+
 
 print(extract_version(DOCKERFILE))
