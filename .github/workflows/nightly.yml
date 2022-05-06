@@ -22,7 +22,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            plone/plone-backend
+            plone/plone-frontend
           # update label with proper version number
           labels: |
             org.label-schema.docker.cmd=docker run -d -p 3000:3000 plone/plone-frontend:nightly
