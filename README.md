@@ -10,7 +10,7 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ### Next version
 
-- `16.0.0-alpha.5` [(16.0.0-alpha.5/Dockerfile)](https://github.com/plone/plone-frontend/blob/v16.0.0-alpha.5/Dockerfile)
+- `16.0.0-alpha.7` [(16.0.0-alpha.7/Dockerfile)](https://github.com/plone/plone-frontend/blob/v16.0.0-alpha.7/Dockerfile)
 
 ### Nightly version
 
@@ -20,6 +20,8 @@ Built from the main branch of [@plone/volto](https://github.com/plone/volto) eve
 
 ### Older tags
 
+- `15.11, 15.11.2` [(15.11.2/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.11.2/Dockerfile)
+- `15.10, 15.10.1` [(15.10.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.10.1/Dockerfile)
 - `15.9, 15.9.0` [(15.9.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.9.0/Dockerfile)
 - `15.8, 15.8.1` [(15.8.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.8.1/Dockerfile)
 - `15.7, 15.7.0` [(15.7.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.7.0/Dockerfile)
