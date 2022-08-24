@@ -7,6 +7,7 @@ ENV VOLTO_PATCH=0
 ENV VOLTO_PRERELEASE=alpha.25
 ENV VOLTO_VERSION=${VOLTO_MAJOR}.${VOLTO_MINOR}.${VOLTO_PATCH}${VOLTO_PRERELEASE}
 
+
 RUN apt-get update \
     && buildDeps="python3 build-essential" \
     && apt-get install -y --no-install-recommends $buildDeps \
