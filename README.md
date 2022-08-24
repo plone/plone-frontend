@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Plone Logo" width="200px" src="https://raw.githubusercontent.com/plone/plone-frontend/main/docs/logo.png">
+    <img alt="Plone Logo" width="200px" src="https://raw.githubusercontent.com/plone/plone-frontend/15.x/docs/logo.png">
 </p>
 
 <h1 align="center">
