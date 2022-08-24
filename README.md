@@ -1,4 +1,20 @@
-# plone-frontend
+<p align="center">
+    <img alt="Plone Logo" width="200px" src="https://raw.githubusercontent.com/plone/plone-frontend/main/docs/logo.png">
+</p>
+
+<h1 align="center">
+  plone/plone-frontend
+</h1>
+
+<div align="center">
+
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/plone/plone-frontend?sort=semver)](https://hub.docker.com/r/plone/plone-frontend)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/plone/plone-frontend?sort=semver)](https://hub.docker.com/r/plone/plone-frontend)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/plone/plone-frontend?style=flat-square)
+[![license badge](https://img.shields.io/github/license/plone/plone-frontend)](./LICENSE)
+
+</div>
 
 Plone frontend [Docker](https://docker.com) images using Node.
 
@@ -10,7 +26,7 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ### Next version
 
-- `16.0.0-alpha.21` [(16.0.0-alpha.21/Dockerfile)](https://github.com/plone/plone-frontend/blob/v16.0.0-alpha.21/Dockerfile)
+- `16.0.0-alpha.26` [(16.0.0-alpha.26/Dockerfile)](https://github.com/plone/plone-frontend/blob/v16.0.0-alpha.26/Dockerfile)
 
 ### Nightly version
 
@@ -63,7 +79,7 @@ Please refer to the [Official Plone Documentation](https://6.dev-docs.plone.org/
 
 - [Issue Tracker](https://github.com/plone/plone-frontend/issues)
 - [Source Code](https://github.com/plone/plone-frontend/)
-- [Documentation](https://github.com/plone/plone-frontend/)
+- [Documentation](https://6.dev-docs.plone.org/install/containers/images/frontend.html)
 
 Please **DO NOT** commit to version branches directly. Even for the smallest and most trivial fix.
 
