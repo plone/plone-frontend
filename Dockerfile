@@ -28,8 +28,7 @@ RUN yo @plone/volto \
     --no-interactive
 
 RUN cd plone-frontend \
-    && yarn install \
-    && yarn config set network-timeout 60000 -g \
+    && yarn install --network-timeout 1000000 \
     && yarn build
 
 FROM base
