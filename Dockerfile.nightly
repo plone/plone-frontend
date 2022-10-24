@@ -17,7 +17,7 @@ RUN curl -k -L -o workspace.zip https://github.com/plone/volto/archive/refs/head
     && mv volto-master plone-frontend
 
 RUN cd plone-frontend \
-    && yarn install \
+    && yarn install --network-timeout 1000000 \
     && yarn build
 
 FROM base
