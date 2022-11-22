@@ -1,4 +1,20 @@
-# plone-frontend
+<p align="center">
+    <img alt="Plone Logo" width="200px" src="https://raw.githubusercontent.com/plone/plone-frontend/15.x/docs/logo.png">
+</p>
+
+<h1 align="center">
+  plone/plone-frontend
+</h1>
+
+<div align="center">
+
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/plone/plone-frontend?sort=semver)](https://hub.docker.com/r/plone/plone-frontend)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/plone/plone-frontend?sort=semver)](https://hub.docker.com/r/plone/plone-frontend)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/plone/plone-frontend?style=flat-square)
+[![license badge](https://img.shields.io/github/license/plone/plone-frontend)](./LICENSE)
+
+</div>
 
 Plone frontend [Docker](https://docker.com) images using Node.
 
@@ -6,10 +22,24 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ## Supported tags and respective Dockerfile links
 
-- `latest, 15, 15.8, 15.8.0` [(15.8.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.8.0/Dockerfile)
+- `16.0.0` [(16.0.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v16.0.0/Dockerfile)
+
+### Nightly version
+
+Built from the main branch of [@plone/volto](https://github.com/plone/volto) every night.
+
+- `nightly` [(Dockerfile.nightly)](https://github.com/plone/plone-frontend/blob/15.x/Dockerfile.nightly)
 
 ### Older tags
 
+- `15, 15.16, 15.16.0` [(15.16.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.16.0/Dockerfile)
+- `15.15, 15.15.0` [(15.15.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.13.0/Dockerfile)
+- `15.13, 15.13.0` [(15.13.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.13.0/Dockerfile)
+- `15.12, 15.12.2` [(15.12.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.12.2/Dockerfile)
+- `15.11, 15.11.2` [(15.11.2/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.11.2/Dockerfile)
+- `15.10, 15.10.1` [(15.10.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.10.1/Dockerfile)
+- `15.9, 15.9.0` [(15.9.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.9.0/Dockerfile)
+- `15.8, 15.8.1` [(15.8.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.8.1/Dockerfile)
 - `15.7, 15.7.0` [(15.7.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.7.0/Dockerfile)
 - `15.6, 15.6.1` [(15.6.1/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.6.1/Dockerfile)
 - `15.5, 15.5.0` [(15.5.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.5.0/Dockerfile)
@@ -47,7 +77,7 @@ Please refer to the [Official Plone Documentation](https://6.dev-docs.plone.org/
 
 - [Issue Tracker](https://github.com/plone/plone-frontend/issues)
 - [Source Code](https://github.com/plone/plone-frontend/)
-- [Documentation](https://github.com/plone/plone-frontend/)
+- [Documentation](https://6.dev-docs.plone.org/install/containers/images/frontend.html)
 
 Please **DO NOT** commit to version branches directly. Even for the smallest and most trivial fix.
 
