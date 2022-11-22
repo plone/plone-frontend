@@ -4,8 +4,8 @@ FROM base as builder
 ENV VOLTO_MAJOR=16
 ENV VOLTO_MINOR=0
 ENV VOLTO_PATCH=0
-ENV VOLTO_PRERELEASE=rc.3
-ENV VOLTO_VERSION=${VOLTO_MAJOR}.${VOLTO_MINOR}.${VOLTO_PATCH}-${VOLTO_PRERELEASE}
+ENV VOLTO_PRERELEASE=
+ENV VOLTO_VERSION=${VOLTO_MAJOR}.${VOLTO_MINOR}.${VOLTO_PATCH}${VOLTO_PRERELEASE}
 
 
 
@@ -14,7 +14,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends $buildDeps \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir build && chown -R node:node build \
-    && npm install --no-audit --no-fund -g yo @plone/generator-volto@alpha
+    && npm install --no-audit --no-fund -g yo @plone/generator-volto
 
 RUN corepack enable
 USER node
