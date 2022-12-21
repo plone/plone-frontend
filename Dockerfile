@@ -32,7 +32,8 @@ RUN yo @plone/volto \
 
 RUN cd plone-frontend \
     && yarn install --network-timeout 1000000 \
-    && yarn build
+    && yarn build \
+    && rm -rf cache omelette .yarn/cache
 
 FROM base
 LABEL maintainer="Plone Community <dev@plone.org>" \
