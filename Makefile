@@ -38,7 +38,7 @@ help: # This help message
 show-image: ## Print Version
 	@echo "$(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
 	@echo "$(MAIN_IMAGE_NAME):$(NIGHTLY_IMAGE_TAG)"
-	@echo "$(BASE_IMAGE_NAME)-(builder|dev|prod):$(IMAGE_TAG)"
+	@echo "$(BASE_IMAGE_NAME)-(builder|dev|prod-config):$(IMAGE_TAG)"
 
 .PHONY: image-builder
 image-builder:  ## Build Base Image
@@ -50,10 +50,10 @@ image-dev:  ## Build Dev Image
 	@echo "Building $(BASE_IMAGE_NAME)-dev:$(IMAGE_TAG)"
 	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-dev:$(IMAGE_TAG) -f Dockerfile.dev --load
 
-.PHONY: image-prod
-image-prod:  ## Build Prod Image
-	@echo "Building $(BASE_IMAGE_NAME)-prod:$(IMAGE_TAG)"
-	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-prod:$(IMAGE_TAG) -f Dockerfile.prod --load
+.PHONY: image-prod-config
+image-prod-config:  ## Build Prod Image
+	@echo "Building $(BASE_IMAGE_NAME)-prod-config:$(IMAGE_TAG)"
+	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-prod-config:$(IMAGE_TAG) -f Dockerfile.prod --load
 
 .PHONY: image-main
 image-main:  ## Build main image
@@ -70,7 +70,7 @@ build-images:  ## Build Images
 	@echo "Building $(BASE_IMAGE_NAME)-(builder|dev|prod):$(IMAGE_TAG) images"
 	$(MAKE) image-builder
 	$(MAKE) image-dev
-	$(MAKE) image-prod
+	$(MAKE) image-prod-config
 	@echo "Building $(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
 	$(MAKE) image-main
 

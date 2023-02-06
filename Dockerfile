@@ -7,7 +7,7 @@ RUN <<EOT
     rm -rf cache omelette .yarn/cache
 EOT
 
-FROM plone/frontend-prod:${VOLTO_VERSION} as base
+FROM plone/frontend-prod-config:${VOLTO_VERSION} as base
 
 LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.name="plone-frontend" \
