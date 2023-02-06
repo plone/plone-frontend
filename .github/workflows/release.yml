@@ -3,56 +3,82 @@ name: Release new Docker image
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v*'
+
+env:
+  BASE_IMAGE_NAME: plone/frontend
+  PLATFORMS: linux/amd64,linux/arm64
 
 jobs:
 
-  release:
+  meta:
     runs-on: ubuntu-latest
-    environment: DOCKER_HUB
-
+    outputs:
+      BASE_IMAGE_NAME: ${{ steps.vars.outputs.BASE_IMAGE_NAME }}
+      PLATFORMS: ${{ steps.vars.outputs.PLATFORMS }}
+      VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
     steps:
-
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          # list of Docker images to use as base name for tags
-          images: |
-            plone/plone-frontend
-          # update label with proper version number
-          labels: |
-            org.label-schema.docker.cmd=docker run -d -p 3000:3000 plone/plone-frontend:{{version}}
-          # generate Docker tags based on the following events/attributes
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
-            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+      - name: Set BASE_IMAGE_NAME, PLATFORMS, VOLTO_VERSION
+        id: vars
+        run: |
+          echo "BASE_IMAGE_NAME=$BASE_IMAGE_NAME" >> $GITHUB_OUTPUT
+          echo "PLATFORMS=$PLATFORMS" >> $GITHUB_OUTPUT
+          echo "VOLTO_VERSION=$(cat version.txt)" >> $GITHUB_OUTPUT
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+  builder-image:
+    needs:
+      - meta
+    uses: ./.github/workflows/image-release.yml
+    with:
+      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
+      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-builder
+      dockerfile: Dockerfile.builder
+      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+    secrets:
+      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+  prod-image:
+    uses: ./.github/workflows/image-release.yml
+    with:
+      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
+      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod
+      dockerfile: Dockerfile.prod
+      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+    secrets:
+      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
+    needs:
+      - meta
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+  dev-image:
+    uses: ./.github/workflows/image-release.yml
+    with:
+      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
+      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-dev
+      dockerfile: Dockerfile.dev
+      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+    secrets:
+      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
+    needs:
+      - meta
+      - builder-image
 
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          platforms: linux/amd64,linux/arm64
-          context: .
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+  plone-frontend:
+    uses: ./.github/workflows/image-release.yml
+    with:
+      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
+      image-name: plone/plone-frontend
+      dockerfile: Dockerfile
+      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+    secrets:
+      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
+    needs:
+      - meta
+      - builder-image
+      - prod-image

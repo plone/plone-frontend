@@ -1,0 +1,15 @@
+# syntax=docker/dockerfile:1
+ARG VOLTO_VERSION
+FROM plone/frontend-builder:${VOLTO_VERSION}
+
+LABEL maintainer="Plone Community <dev@plone.org>" \
+      org.label-schema.name="frontend-dev" \
+      org.label-schema.description="Plone frontend image for development" \
+      org.label-schema.vendor="Plone Foundation"
+
+WORKDIR /app
+
+EXPOSE 3000 3001
+
+ENTRYPOINT [ "yarn" ]
+CMD ["start"]

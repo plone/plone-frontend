@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1
+FROM node:16-slim
+
+LABEL maintainer="Plone Community <dev@plone.org>" \
+      org.label-schema.name="frontend-prod-config" \
+      org.label-schema.description="Slim image for Plone frontend deployments" \
+      org.label-schema.vendor="Plone Foundation"
+
+RUN <<EOT
+    apt update
+    apt install -y --no-install-recommends busybox
+    busybox --install -s
+    rm -rf /var/lib/apt/lists/*
+    mkdir /app
+    chown -R node:node /app
+EOT
+
+USER node
+
+WORKDIR /app
+EXPOSE 3000
+
+CMD ["yarn", "start:prod"]
