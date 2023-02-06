@@ -41,11 +41,11 @@ jobs:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-  prod-image:
+  prod-conf-image:
     uses: ./.github/workflows/image-release.yml
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
-      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod
+      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod-config
       dockerfile: Dockerfile.prod
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
     secrets:
@@ -81,4 +81,4 @@ jobs:
     needs:
       - meta
       - builder-image
-      - prod-image
+      - prod-conf-image
