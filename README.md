@@ -18,11 +18,9 @@
 
 Plone frontend [Docker](https://docker.com) images using Node.
 
-> **NOTE**: These images are not yet officially supported by the Plone Community.
-
 ## Supported tags and respective Dockerfile links
 
-- `16.9.0` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/v16.9.0/Dockerfile)
+- `16`, `16.10`, `16.10.0`, `latest` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 
 ### Nightly version
 
