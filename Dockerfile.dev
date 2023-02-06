@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG VOLTO_VERSION=16.9.0
+ARG VOLTO_VERSION
 FROM plone/frontend-builder:${VOLTO_VERSION}
 
 LABEL maintainer="Plone Community <dev@plone.org>" \
