@@ -51,6 +51,6 @@ jobs:
           platforms: linux/arm64
           context: .
           file: Dockerfile.nightly
-          push: ${{ inputs.perform_deploy }
+          push: ${{ inputs.perform_deploy }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
