@@ -10,7 +10,7 @@ on:
 jobs:
 
   release:
-    runs-on: mini1
+    runs-on: self-hosted
     environment: DOCKER_HUB
 
     steps:
