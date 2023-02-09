@@ -24,6 +24,18 @@ VOLTO_VERSION=$$(cat version.txt)
 IMAGE_TAG=${VOLTO_VERSION}
 NIGHTLY_IMAGE_TAG=nightly
 
+# Code Quality
+CURRENT_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+CODE_QUALITY_VERSION=2.1.0
+ifndef LOG_LEVEL
+	LOG_LEVEL=INFO
+endif
+CURRENT_USER=$$(whoami)
+USER_INFO=$$(id -u ${CURRENT_USER}):$$(getent group ${CURRENT_USER}|cut -d: -f3)
+LINT=docker run --rm -e LOG_LEVEL="${LOG_LEVEL}" -v "${CURRENT_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} check
+FORMAT=docker run --rm --user="${USER_INFO}" -e LOG_LEVEL="${LOG_LEVEL}" -v "${CURRENT_FOLDER}":/github/workspace plone/code-quality:${CODE_QUALITY_VERSION} format
+
+
 
 .PHONY: all
 all: help
@@ -34,6 +46,17 @@ all: help
 help: # This help message
 	@grep -E '^[a-zA-Z_-]+:.*?# .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?# "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+# Format
+.PHONY: format
+format: ## Format the codebase according to our standards
+	@echo "$(GREEN)==> Format Python helper$(RESET)"
+	$(FORMAT)
+
+.PHONY: lint
+lint: ## check code style
+	$(LINT)
+
+# Build image
 .PHONY: show-image
 show-image: ## Print Version
 	@echo "$(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
