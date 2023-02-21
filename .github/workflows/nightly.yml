@@ -27,11 +27,11 @@ jobs:
             plone/plone-frontend
           # update label with proper version number
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 3000:3000 plone/plone-frontend:nightly
+            org.label-schema.docker.cmd=docker run -d -p 3000:3000 plone/plone-frontend:buildtest
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value=nightly
-            type=schedule,pattern=nightly-{{date 'YYYYMMDD'}}
+            type=raw,value=buildtest
+            #type=schedule,pattern=nightly-{{date 'YYYYMMDD'}}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
