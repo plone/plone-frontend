@@ -8,6 +8,7 @@ on:
 env:
   BASE_IMAGE_NAME: plone/frontend
   PLATFORMS: linux/amd64,linux/arm64
+  IS_LATEST: true
 
 jobs:
 
@@ -15,17 +16,19 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       BASE_IMAGE_NAME: ${{ steps.vars.outputs.BASE_IMAGE_NAME }}
+      IS_LATEST: ${{ steps.vars.outputs.IS_LATEST }}
       PLATFORMS: ${{ steps.vars.outputs.PLATFORMS }}
       VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set BASE_IMAGE_NAME, PLATFORMS, VOLTO_VERSION
+      - name: Set BASE_IMAGE_NAME, IS_LATEST, PLATFORMS, VOLTO_VERSION
         id: vars
         run: |
           echo "BASE_IMAGE_NAME=$BASE_IMAGE_NAME" >> $GITHUB_OUTPUT
           echo "PLATFORMS=$PLATFORMS" >> $GITHUB_OUTPUT
+          echo "IS_LATEST=$IS_LATEST" >> $GITHUB_OUTPUT
           echo "VOLTO_VERSION=$(cat version.txt)" >> $GITHUB_OUTPUT
 
   builder-image:
@@ -37,6 +40,7 @@ jobs:
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-builder
       dockerfile: Dockerfile.builder
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+      is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -48,6 +52,7 @@ jobs:
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod-config
       dockerfile: Dockerfile.prod
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+      is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -61,6 +66,7 @@ jobs:
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-dev
       dockerfile: Dockerfile.dev
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+      is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -75,6 +81,7 @@ jobs:
       image-name: plone/plone-frontend
       dockerfile: Dockerfile
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
+      is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
