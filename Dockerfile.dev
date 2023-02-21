@@ -9,7 +9,7 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
 
 WORKDIR /app
 
-EXPOSE 3000 3001
+EXPOSE 3000 3001 6006
 
 ENTRYPOINT [ "yarn" ]
 CMD ["start"]
