@@ -40,6 +40,7 @@ FORMAT=docker run --rm --user="${USER_INFO}" -e LOG_LEVEL="${LOG_LEVEL}" -v "${C
 .PHONY: all
 all: help
 
+# extra comment
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
 .PHONY: help
