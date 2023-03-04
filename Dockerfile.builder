@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:16-slim
+FROM node:18-slim
 ARG VOLTO_VERSION
 
 LABEL maintainer="Plone Community <dev@plone.org>" \
@@ -10,7 +10,7 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
 RUN <<EOT
     apt update
     apt install -y --no-install-recommends python3 build-essential
-    npm install --no-audit --no-fund -g yo @plone/generator-volto
+    npm install --no-audit --no-fund -g yo @plone/generator-volto@alpha
     mkdir /app
     chown -R node:node /app
     rm -rf /var/lib/apt/lists/*
