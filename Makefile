@@ -102,6 +102,11 @@ create-tag: # Create a new tag using git
 	@echo "Creating new tag $(VOLTO_VERSION)"
 	if git show-ref --tags v$(VOLTO_VERSION) --quiet; then echo "$(VOLTO_VERSION) already exists";else git tag -a v$(VOLTO_VERSION) -m "Release $(VOLTO_VERSION)" && git push && git push --tags;fi
 
+.PHONY: remove-tag
+remove-tag: # Remove an existing tag locally and remote
+	@echo "Removing tag v$(TAG)"
+	if git show-ref --tags v$(TAG) --quiet; then git tag -d v$(TAG) && git push origin :v$(TAG) && echo "$(TAG) removed";else echo "$(TAG) does not exist";fi
+
 .PHONY: commit-and-release
 commit-and-release: # Commit new version change and create tag
 	@echo "Commiting changes"
