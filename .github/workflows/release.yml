@@ -5,11 +5,18 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+        add_raw_version:
+          description: 'Add raw version to tags'
+          type: boolean
+          required: false
+          default: false
 
 env:
   BASE_IMAGE_NAME: plone/frontend
   PLATFORMS: linux/amd64,linux/arm64
   IS_LATEST: true
+  ADD_RAW_VERSION: ${{ github.event.inputs.add_raw_version }}
 
 jobs:
 
@@ -20,6 +27,8 @@ jobs:
       IS_LATEST: ${{ steps.vars.outputs.IS_LATEST }}
       PLATFORMS: ${{ steps.vars.outputs.PLATFORMS }}
       VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
+      ADD_RAW_VERSION: ${{ steps.vars.outputs.ADD_RAW_VERSION }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,6 +40,7 @@ jobs:
           echo "PLATFORMS=$PLATFORMS" >> $GITHUB_OUTPUT
           echo "IS_LATEST=$IS_LATEST" >> $GITHUB_OUTPUT
           echo "VOLTO_VERSION=$(cat version.txt)" >> $GITHUB_OUTPUT
+          echo "ADD_RAW_VERSION=$ADD_RAW_VERSION" >> $GITHUB_OUTPUT
 
   builder-image:
     needs:
@@ -42,6 +52,7 @@ jobs:
       dockerfile: Dockerfile.builder
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -54,6 +65,8 @@ jobs:
       dockerfile: Dockerfile.prod
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
+
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -68,6 +81,7 @@ jobs:
       dockerfile: Dockerfile.dev
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -83,6 +97,7 @@ jobs:
       dockerfile: Dockerfile
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
