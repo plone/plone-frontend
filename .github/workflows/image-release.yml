@@ -49,6 +49,7 @@ jobs:
             type=pep440,pattern={{major}}.{{minor}}.{{patch}}
             type=pep440,pattern={{major}}.{{minor}}
             type=pep440,pattern={{major}}
+            type=semver,pattern={{version}}
             type=sha
             type=raw,value=latest,enable=${{ inputs.is-latest }}
 
