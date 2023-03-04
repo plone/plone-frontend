@@ -9,7 +9,11 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
 
 WORKDIR /app
 
+# Expose ports 3000 and 3001 (used by Express in development mode) and port 6006 (Storybook)
 EXPOSE 3000 3001 6006
 
+# Entrypoint would be yarn
 ENTRYPOINT [ "yarn" ]
+
+# Run the project in development mode
 CMD ["start"]
