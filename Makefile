@@ -97,10 +97,12 @@ build-images:  ## Build Images
 	@echo "Building $(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
 	$(MAKE) image-main
 
+.PHONY: create-tag
 create-tag: # Create a new tag using git
 	@echo "Creating new tag $(VOLTO_VERSION)"
 	if git show-ref --tags v$(VOLTO_VERSION) --quiet; then echo "$(VOLTO_VERSION) already exists";else git tag -a v$(VOLTO_VERSION) -m "Release $(VOLTO_VERSION)" && git push && git push --tags;fi
 
+.PHONY: commit-and-release
 commit-and-release: # Commit new version change and create tag
 	@echo "Commiting changes"
 	@git commit -am "Use Volto $(VOLTO_VERSION)"
