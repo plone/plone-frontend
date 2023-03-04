@@ -6,18 +6,31 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.description="Slim image for Plone frontend deployments" \
       org.label-schema.vendor="Plone Foundation"
 
+
+# Install busybox and wget
 RUN <<EOT
     apt update
-    apt install -y --no-install-recommends busybox
+    apt install -y --no-install-recommends busybox wget
     busybox --install -s
     rm -rf /var/lib/apt/lists/*
     mkdir /app
     chown -R node:node /app
 EOT
 
+# Run the image with user node
 USER node
 
+# Set working directory to /app
 WORKDIR /app
+
+# Expose default Express port
 EXPOSE 3000
 
-CMD ["yarn", "start:prod"]
+# Set healthcheck to port 3000
+HEALTHCHECK --interval=10s --timeout=5s --start-period=30s CMD [ -n "$LISTEN_PORT" ] || LISTEN_PORT=3000 ; wget -q http://127.0.0.1:"$LISTEN_PORT" -O - || exit 1
+
+# Entrypoint would be yarn
+ENTRYPOINT [ "yarn" ]
+
+# And the image will run in production mode
+CMD ["start:prod"]
