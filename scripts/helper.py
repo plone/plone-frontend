@@ -14,6 +14,7 @@ logger = logging.getLogger("Volto Helper")
 APP_FOLDER = Path("/app").resolve()
 PACKAGE_JSON_PATH = (APP_FOLDER / "package.json").resolve()
 JSCONFIG_PATH = (APP_FOLDER / "jsconfig.json").resolve()
+VOLTOCONFIGPATH = (APP_FOLDER / "volto.config.js").resolve()
 
 
 ADDON_NAME = os.environ.get("ADDON_NAME", "")
@@ -24,7 +25,8 @@ def add_packages_to_package_json(config: dict, packages: dict) -> dict:
     addons = config.get("addons", [])
     workspaces = config.get("workspaces", [])
     for pkg_name, pkg_path in packages.items():
-        addons.append(pkg_name)
+        if not VOLTOCONFIGPATH.exists():
+            addons.append(pkg_name)
         workspace_path = pkg_path.replace("/src", "")
         workspaces.append(f"src/{workspace_path}")
     config["addons"] = addons
