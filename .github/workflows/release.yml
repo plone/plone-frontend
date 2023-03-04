@@ -1,10 +1,10 @@
 name: Release new Docker image
 
 on:
-  workflow_dispatch:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 env:
   BASE_IMAGE_NAME: plone/frontend
