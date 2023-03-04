@@ -4,7 +4,8 @@ on:
   push:
     tags:
       - 'v*'
-
+  workflow_dispatch:
+  
 env:
   BASE_IMAGE_NAME: plone/frontend
   PLATFORMS: linux/amd64,linux/arm64
