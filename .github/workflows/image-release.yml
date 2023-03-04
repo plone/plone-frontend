@@ -55,7 +55,7 @@ jobs:
             type=pep440,pattern={{major}}
             type=sha
             type=raw,value=latest,enable=${{ inputs.is-latest }}
-            type=raw,enable={{ inputs.add-raw-version == 'true' }},value={{ inputs.volto-version }}
+            type=raw,enable=${{ inputs.add-raw-version == 'true' }},value=${{ inputs.volto-version }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
