@@ -15,7 +15,7 @@ on:
 env:
   BASE_IMAGE_NAME: plone/frontend
   PLATFORMS: linux/amd64,linux/arm64
-  IS_LATEST: true
+  IS_LATEST: false
   ADD_RAW_VERSION: ${{ github.event.inputs.add_raw_version }}
 
 jobs:
@@ -52,7 +52,7 @@ jobs:
       dockerfile: Dockerfile.builder
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
-      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION == 'true'}}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -65,7 +65,7 @@ jobs:
       dockerfile: Dockerfile.prod
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
-      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION == 'true'}}
 
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -81,7 +81,7 @@ jobs:
       dockerfile: Dockerfile.dev
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
-      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION == 'true'}}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -97,7 +97,7 @@ jobs:
       dockerfile: Dockerfile
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
-      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION }}
+      add-raw-version: ${{ needs.meta.outputs.ADD_RAW_VERSION == 'true'}}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
