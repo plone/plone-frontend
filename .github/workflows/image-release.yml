@@ -70,7 +70,7 @@ jobs:
           password: ${{ secrets.registry-password }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           platforms: ${{ inputs.platforms }}
           context: .
