@@ -28,8 +28,8 @@ jobs:
             org.label-schema.docker.cmd=docker run -d -p 3000:3000 plone/plone-frontend:nightly
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value=nightly
-            type=schedule,pattern=nightly-{{date 'YYYYMMDD'}}
+            type=raw,value=nightly17
+            type=schedule,pattern=nightly17-{{date 'YYYYMMDD'}}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
