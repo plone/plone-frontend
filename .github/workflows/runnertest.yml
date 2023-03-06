@@ -1,4 +1,4 @@
-name: Generate Nightly Image
+name: Runner Test
 
 on:
   workflow_dispatch:
