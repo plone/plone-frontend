@@ -28,7 +28,7 @@ on:
 jobs:
 
   release:
-    runs-on: self-hosted
+    runs-on: [self-hosted, ARM64, stable]
     environment: DOCKER_HUB
     steps:
       - name: Checkout
