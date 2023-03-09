@@ -20,11 +20,11 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ## Supported tags and respective Dockerfile links
 
-- `16`, `16.14`, `16.14.0`, `latest` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
+- `16`, `16.16`, `16.16.0`, `latest` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 
 ## Next version
 
-- `17.0.0-alpha.0` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
+- `17.0.0-alpha.1` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
 
 ### Nightly version
 
