@@ -9,7 +9,7 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
 
 RUN <<EOT
     apt update
-    apt install -y --no-install-recommends python3 build-essential
+    apt install -y --no-install-recommends python3 build-essential git
     npm install --no-audit --no-fund -g yo @plone/generator-volto@alpha
     mkdir /app
     chown -R node:node /app

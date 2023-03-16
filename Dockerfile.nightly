@@ -6,7 +6,7 @@ FROM base as builder
 RUN <<EOT
     apt-get update
     buildDeps="curl python3 build-essential unzip"
-    apt-get install -y --no-install-recommends $buildDeps
+    apt-get install -y --no-install-recommends $buildDeps git
     rm -rf /var/lib/apt/lists/*
     mkdir build && chown -R node:node build
 EOT
