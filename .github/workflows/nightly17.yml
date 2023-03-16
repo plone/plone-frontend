@@ -1,4 +1,4 @@
-name: Generate Nightly Image
+name: Generate Nightly Image 17 Alpha
 
 on:
   workflow_dispatch:
