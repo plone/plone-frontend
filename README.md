@@ -24,7 +24,7 @@ Plone frontend [Docker](https://docker.com) images using Node.
 
 ## Next version
 
-- `17.0.0-alpha.2` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
+- `17.0.0-alpha.0` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
 
 ### Nightly version
 
