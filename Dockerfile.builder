@@ -33,4 +33,3 @@ RUN <<EOT
 EOT
 
 COPY --chown=node:node scripts/helper.py /setupAddon
-COPY --chown=node:node mrs.developer.json /app
