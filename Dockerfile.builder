@@ -9,7 +9,7 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
 
 RUN <<EOT
     apt update
-    apt install -y --no-install-recommends python3 build-essential git
+    apt install -y --no-install-recommends python3 build-essential git ca-certificates
     npm install --no-audit --no-fund -g yo @plone/generator-volto@alpha
     mkdir /app
     chown -R node:node /app
@@ -33,3 +33,4 @@ RUN <<EOT
 EOT
 
 COPY --chown=node:node scripts/helper.py /setupAddon
+COPY --chown=node:node mrs.developer.json /app
