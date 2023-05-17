@@ -8,6 +8,7 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.vendor="Plone Foundation"
 
 RUN <<EOT
+    set -e 
     apt update
     apt install -y --no-install-recommends python3 build-essential
     npm install --no-audit --no-fund -g yo @plone/generator-volto
@@ -20,6 +21,7 @@ USER node
 WORKDIR /app
 
 RUN <<EOT
+    set -e 
     corepack enable
     yo @plone/volto \
         app \

@@ -4,6 +4,7 @@ FROM plone/frontend-builder:${VOLTO_VERSION} as builder
 
 # Build Volto Project and then remove directories not needed for production
 RUN <<EOT
+    set -e 
     yarn build
     rm -rf cache omelette .yarn/cache
 EOT
