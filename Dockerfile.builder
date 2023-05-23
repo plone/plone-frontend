@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:16-slim
+FROM node:16-bullseye-slim
 ARG VOLTO_VERSION
 
 LABEL maintainer="Plone Community <dev@plone.org>" \
