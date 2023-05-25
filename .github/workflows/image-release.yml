@@ -49,10 +49,10 @@ jobs:
           tags: |
             type=ref,event=branch
             type=ref,event=pr
-            type=pep440,pattern={{version}}
-            type=pep440,pattern={{major}}.{{minor}}.{{patch}}
-            type=pep440,pattern={{major}}.{{minor}}
-            type=pep440,pattern={{major}}
+            type=pep440,pattern={{version}},value=${{ inputs.volto-version }}
+            type=pep440,pattern={{major}}.{{minor}}.{{patch}},value=${{ inputs.volto-version }}
+            type=pep440,pattern={{major}}.{{minor}},value=${{ inputs.volto-version }}
+            type=pep440,pattern={{major}},value=${{ inputs.volto-version }}
             type=sha
             type=raw,value=latest,enable=${{ inputs.is-latest }}
             type=raw,value=${{ inputs.volto-version }}
