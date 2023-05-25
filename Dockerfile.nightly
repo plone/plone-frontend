@@ -4,6 +4,7 @@ FROM base as builder
 
 
 RUN <<EOT
+    set -e
     apt-get update
     buildDeps="curl python3 build-essential unzip"
     apt-get install -y --no-install-recommends $buildDeps git
@@ -16,6 +17,7 @@ WORKDIR /build
 
 # Generate new volto app
 RUN <<EOT
+    set -e
     curl -k -L -o workspace.zip https://github.com/plone/volto/archive/refs/heads/master.zip
     unzip workspace.zip
     mv volto-master plone-frontend

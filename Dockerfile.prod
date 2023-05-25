@@ -9,6 +9,7 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
 
 # Install busybox and wget
 RUN <<EOT
+    set -e 
     apt update
     apt install -y --no-install-recommends busybox wget git
     busybox --install -s
