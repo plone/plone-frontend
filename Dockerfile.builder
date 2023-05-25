@@ -17,12 +17,12 @@ RUN <<EOT
     rm -rf /var/lib/apt/lists/*
 EOT
 
-USER node
 WORKDIR /app
+RUN corepack enable
 
+USER node
 RUN <<EOT
     set -e 
-    corepack enable
     yo @plone/volto \
         app \
         --description "Plone frontend using Volto" \
