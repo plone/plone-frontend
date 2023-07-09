@@ -16,7 +16,9 @@
 
 </div>
 
-Plone frontend [Docker](https://docker.com) images using Node.
+Plone frontend [Docker](https://docker.com) images using Node.  This is not the main `Volto` repository, but used to build our official images.
+
+To check and report issues and contribute to Volto, See [plone/volto](https://github.com/plone/volto).
 
 ## Supported tags and respective Dockerfile links
 
