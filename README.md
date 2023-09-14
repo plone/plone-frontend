@@ -26,7 +26,7 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 ## Next version
 
-- `17.0.0-alpha.25` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
+- `17.0.0-alpha.26` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
 
 ### Nightly version
 
