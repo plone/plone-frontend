@@ -18,9 +18,9 @@ WORKDIR /build
 # Generate new volto app
 RUN <<EOT
     set -e
-    curl -k -L -o workspace.zip https://github.com/plone/volto/archive/refs/heads/master.zip
+    curl -k -L -o workspace.zip https://github.com/plone/volto/archive/refs/heads/main.zip
     unzip workspace.zip
-    mv volto-master plone-frontend
+    mv volto-main plone-frontend
     cd plone-frontend
     yarn install --network-timeout 1000000
     yarn build

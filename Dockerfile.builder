@@ -8,10 +8,10 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.vendor="Plone Foundation"
 
 RUN <<EOT
-    set -e 
+    set -e
     apt update
     apt install -y --no-install-recommends python3 build-essential git ca-certificates
-    npm install --no-audit --no-fund -g yo @plone/generator-volto@alpha
+    npm install --no-audit --no-fund -g yo @plone/generator-volto
     mkdir /app
     chown -R node:node /app
     rm -rf /var/lib/apt/lists/*
@@ -22,7 +22,7 @@ RUN corepack enable
 
 USER node
 RUN <<EOT
-    set -e 
+    set -e
     yo @plone/volto \
         app \
         --description "Plone frontend using Volto" \
