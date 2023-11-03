@@ -26,12 +26,6 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 - `16`, `16.26`, `16.26.0` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 
-### Nightly version
-
-Built from the main branch of [@plone/volto](https://github.com/plone/volto) every night.
-
-- `nightly` [(Dockerfile.nightly)](https://github.com/plone/plone-frontend/blob/15.x/Dockerfile.nightly)
-
 ### Older tags
 
 - `15, 15.16, 15.16.0` [(15.16.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.16.0/Dockerfile)
