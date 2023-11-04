@@ -22,15 +22,9 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 ## Supported tags and respective Dockerfile links
 
-- `17`, `17.3`, `17.3.0`, `latest` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
+- `17`, `17.4`, `17.4.0`, `latest` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
 
-- `16`, `16.25`, `16.25.0` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
-
-### Nightly version
-
-Built from the main branch of [@plone/volto](https://github.com/plone/volto) every night.
-
-- `nightly` [(Dockerfile.nightly)](https://github.com/plone/plone-frontend/blob/15.x/Dockerfile.nightly)
+- `16`, `16.26`, `16.26.0` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 
 ### Next major version
 
