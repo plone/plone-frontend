@@ -11,7 +11,7 @@ RUN <<EOT
     set -e
     apt update
     apt install -y --no-install-recommends python3 build-essential git ca-certificates
-    npm install --no-audit --no-fund -g yo @plone/generator-volto
+    npm install --no-audit --no-fund -g yo @plone/generator-volto@alpha
     mkdir /app
     chown -R node:node /app
     rm -rf /var/lib/apt/lists/*
