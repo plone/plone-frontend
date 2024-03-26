@@ -1,0 +1,13 @@
+{
+  "name": "builder-next",
+  "scripts": {
+    "start:prod": "pnpm --filter @plone/volto start:prod",
+    "build": "pnpm build:deps && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
+    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build"
+  },
+  "dependencies": {
+    "@plone/volto": "workspace:*",
+    "@plone/registry": "workspace:*"
+  },
+  "packageManager": "pnpm@8.15.4"
+}

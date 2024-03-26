@@ -68,6 +68,11 @@ image-builder:  ## Build Base Image
 	@echo "Building $(BASE_IMAGE_NAME)-builder:$(IMAGE_TAG)"
 	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-builder:$(IMAGE_TAG) -f Dockerfile.builder --load
 
+.PHONY: image-builder-next
+image-builder-next:  ## Build Base Image
+	@echo "Building $(BASE_IMAGE_NAME)-builder-next:$(IMAGE_TAG)"
+	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-builder-next:$(IMAGE_TAG) -f next/Dockerfile.builder --load
+
 .PHONY: image-dev
 image-dev:  ## Build Dev Image
 	@echo "Building $(BASE_IMAGE_NAME)-dev:$(IMAGE_TAG)"
@@ -78,10 +83,20 @@ image-prod-config:  ## Build Prod Image
 	@echo "Building $(BASE_IMAGE_NAME)-prod-config:$(IMAGE_TAG)"
 	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-prod-config:$(IMAGE_TAG) -f Dockerfile.prod --load
 
+.PHONY: image-prod-config-next
+image-prod-config-next:  ## Build Prod Image
+	@echo "Building $(BASE_IMAGE_NAME)-prod-config:$(IMAGE_TAG)"
+	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-prod-config-next:$(IMAGE_TAG) -f next/Dockerfile.prod --load
+
 .PHONY: image-main
 image-main:  ## Build main image
 	@echo "Building $(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
 	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(MAIN_IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --load
+
+.PHONY: image-main-next
+image-main-next:  ## Build main image
+	@echo "Building $(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
+	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(MAIN_IMAGE_NAME):$(IMAGE_TAG) -f next/Dockerfile --load
 
 .PHONY: image-nightly
 image-nightly:  ## Build Docker Image Nightly
