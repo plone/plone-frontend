@@ -24,7 +24,7 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 - `17`, `17.15`, `17.15.5`, `latest` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
 
-- `16`, `16.31`, `16.31.4` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
+- `16`, `16.31`, `16.31.5` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 
 ### Older tags
 
