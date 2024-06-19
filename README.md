@@ -26,7 +26,7 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 - `16`, `16.31`, `16.31.8` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 
-### Next major version
+### Next major version 
 
 - `18` [(18.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/Dockerfile)
 
