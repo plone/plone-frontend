@@ -4,13 +4,11 @@ on:
   workflow_dispatch:
 
 jobs:
-
   release:
     runs-on: [self-hosted, ARM64, Linux, unstable]
     environment: DOCKER_HUB
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -45,7 +43,7 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           context: .
-          file: Dockerfile.nightly
+          file: Dockerfile.builder
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

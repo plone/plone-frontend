@@ -17,5 +17,5 @@ pyflakes = ["+*"]
 "flake8-*" = ["+*"]
 
 [tool.plone-code-analysis]
-paths = "scripts/helper.py"
+paths = "yarn/scripts/helper.py"
 checkers = ["black", "flake8", "isort", ]

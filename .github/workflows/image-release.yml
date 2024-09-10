@@ -23,6 +23,10 @@ on:
         required: false
         type: boolean
         default: false
+      suffix:
+        required: false
+        type: string
+        default: ""
     secrets:
       registry-username:
         required: true
@@ -30,7 +34,6 @@ on:
         required: true
 
 jobs:
-
   release:
     runs-on: [self-hosted, ARM64, stable]
     environment: DOCKER_HUB
@@ -46,6 +49,7 @@ jobs:
             ${{ inputs.image-name }}
           flavor: |
             latest=false
+            suffix=${{ inputs.suffix }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
