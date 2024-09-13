@@ -23,6 +23,10 @@ on:
         required: false
         type: boolean
         default: false
+      context:
+        required: false
+        type: string
+        default: "."
       suffix:
         required: false
         type: string
@@ -77,7 +81,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           platforms: ${{ inputs.platforms }}
-          context: .
+          context: ${{ inputs.context }}
           file: ${{ inputs.dockerfile }}
           build-args: |
             VOLTO_VERSION=${{ inputs.volto-version }}
