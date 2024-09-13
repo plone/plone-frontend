@@ -39,8 +39,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-builder
-      context: pnpm
-      dockerfile: Dockerfile.builder
+      context: ./pnpm
+      dockerfile: pnpm/Dockerfile.builder
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
     secrets:
@@ -52,8 +52,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod-config
-      context: pnpm
-      dockerfile: Dockerfile.prod
+      context: ./pnpm
+      dockerfile: pnpm/Dockerfile.prod
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
 
@@ -68,8 +68,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-dev
-      context: pnpm
-      dockerfile: Dockerfile.dev
+      context: ./pnpm
+      dockerfile: pnpm/Dockerfile.dev
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
     secrets:
@@ -84,8 +84,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: plone/plone-frontend
-      context: pnpm
-      dockerfile: Dockerfile
+      context: ./pnpm
+      dockerfile: pnpm/Dockerfile
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
     secrets:
@@ -103,8 +103,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-builder
-      context: yarn
-      dockerfile: Dockerfile.builder
+      context: ./yarn
+      dockerfile: yarn/Dockerfile.builder
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       suffix: -yarn
     secrets:
@@ -116,8 +116,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod-config
-      context: yarn
-      dockerfile: Dockerfile.prod
+      context: ./yarn
+      dockerfile: yarn/Dockerfile.prod
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       suffix: -yarn
     secrets:
@@ -131,8 +131,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-dev
-      context: yarn
-      dockerfile: Dockerfile.dev
+      context: ./yarn
+      dockerfile: yarn/Dockerfile.dev
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       suffix: -yarn
     secrets:
@@ -147,8 +147,8 @@ jobs:
     with:
       volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
       image-name: plone/plone-frontend
-      context: yarn
-      dockerfile: Dockerfile
+      context: ./yarn
+      dockerfile: yarn/Dockerfile
       platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       suffix: -yarn
     secrets:
