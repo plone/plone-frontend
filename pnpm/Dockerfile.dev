@@ -1,0 +1,19 @@
+# syntax=docker/dockerfile:1
+ARG VOLTO_VERSION
+FROM plone/frontend-builder:${VOLTO_VERSION}
+
+LABEL maintainer="Plone Community <dev@plone.org>" \
+      org.label-schema.name="frontend-dev" \
+      org.label-schema.description="Plone frontend image for development" \
+      org.label-schema.vendor="Plone Foundation"
+
+WORKDIR /app
+
+# Expose ports 3000 and 3001 (used by Express in development mode) and port 6006 (Storybook)
+EXPOSE 3000 3001 6006
+
+# Entrypoint would be yarn
+ENTRYPOINT [ "pnpm" ]
+
+# Run the project in development mode
+CMD ["start"]

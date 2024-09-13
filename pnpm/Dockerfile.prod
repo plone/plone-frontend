@@ -1,0 +1,40 @@
+# syntax=docker/dockerfile:1
+FROM node:20-slim
+
+LABEL maintainer="Plone Community <dev@plone.org>" \
+      org.label-schema.name="frontend-prod-config" \
+      org.label-schema.description="Slim image for Plone frontend deployments" \
+      org.label-schema.vendor="Plone Foundation"
+
+
+# Install busybox and wget
+RUN <<EOT
+    set -e
+    apt update
+    apt install -y --no-install-recommends busybox wget git
+    busybox --install -s
+    rm -rf /var/lib/apt/lists/*
+    mkdir /app
+    chown -R node:node /app
+EOT
+
+RUN corepack enable
+
+# Run the image with user node
+USER node
+
+# Set working directory to /app
+WORKDIR /app
+RUN corepack use pnpm@9
+
+# Expose default Express port
+EXPOSE 3000
+
+# Set healthcheck to port 3000
+HEALTHCHECK --interval=10s --timeout=5s --start-period=30s CMD [ -n "$LISTEN_PORT" ] || LISTEN_PORT=3000 ; wget -q http://127.0.0.1:"$LISTEN_PORT" -O - || exit 1
+
+# Entrypoint would be pnpm
+ENTRYPOINT [ "pnpm" ]
+
+# And the image will run in production mode
+CMD ["start:prod"]

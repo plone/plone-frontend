@@ -8,8 +8,6 @@ SHELL:=bash
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
 
-NIGHTLY_IMAGE_TAG=nightly
-
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
 RED=`tput setaf 1`
@@ -22,7 +20,6 @@ MAIN_IMAGE_NAME=plone/plone-frontend
 BASE_IMAGE_NAME=plone/frontend
 VOLTO_VERSION=$$(cat version.txt)
 IMAGE_TAG=${VOLTO_VERSION}
-NIGHTLY_IMAGE_TAG=nightly
 
 # Code Quality
 CURRENT_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
@@ -60,7 +57,6 @@ lint: ## check code style
 .PHONY: show-image
 show-image: ## Print Version
 	@echo "$(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
-	@echo "$(MAIN_IMAGE_NAME):$(NIGHTLY_IMAGE_TAG)"
 	@echo "$(BASE_IMAGE_NAME)-(builder|dev|prod-config):$(IMAGE_TAG)"
 
 .PHONY: image-builder
@@ -82,11 +78,6 @@ image-prod-config:  ## Build Prod Image
 image-main:  ## Build main image
 	@echo "Building $(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
 	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(MAIN_IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --load
-
-.PHONY: image-nightly
-image-nightly:  ## Build Docker Image Nightly
-	@echo "Building $(MAIN_IMAGE_NAME):$(NIGHTLY_IMAGE_TAG)"
-	@docker build . -t $(MAIN_IMAGE_NAME):$(NIGHTLY_IMAGE_TAG) -f Dockerfile.nightly
 
 .PHONY: build-images
 build-images:  ## Build Images

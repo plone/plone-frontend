@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
-FROM plone/frontend-builder:${VOLTO_VERSION}
+FROM plone/frontend-builder:${VOLTO_VERSION}-yarn
 
 LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.name="frontend-dev" \

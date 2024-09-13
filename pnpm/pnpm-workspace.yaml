@@ -1,0 +1,10 @@
+packages:
+  # all packages in direct subdirs of packages/
+  - "core/packages/volto"
+  - "core/packages/types"
+  - "core/packages/registry"
+  - "core/packages/scripts"
+  - "core/packages/tsconfig"
+  - "core/packages/volto-slate"
+  - "core/packages/coresandbox"
+  - "packages/*"
