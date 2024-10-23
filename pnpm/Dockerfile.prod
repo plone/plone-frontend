@@ -25,7 +25,10 @@ USER node
 
 # Set working directory to /app
 WORKDIR /app
-RUN corepack use pnpm@9
+# Upgrades pnpm to the latest version globally
+RUN corepack install -g pnpm
+# Specifically install and uses the package manager configured in the local project
+RUN corepack install
 
 # Expose default Express port
 EXPOSE 3000
