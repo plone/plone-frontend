@@ -3,7 +3,7 @@ name: Update Docker Hub Description
 on:
   push:
     branches:
-      - '17.x'
+      - '18.x'
     paths:
       - "README.md"
       - .github/workflows/description.yml
@@ -15,9 +15,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
 
       - name: Update repo description
         uses: peter-evans/dockerhub-description@v4

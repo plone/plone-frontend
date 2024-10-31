@@ -61,23 +61,23 @@ show-image: ## Print Version
 
 .PHONY: image-builder
 image-builder:  ## Build Base Image
-	@echo "Building $(BASE_IMAGE_NAME)-builder:$(IMAGE_TAG)"
-	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-builder:$(IMAGE_TAG) -f Dockerfile.builder --load
+	$(MAKE) -C "./pnpm/" image-builder
+	$(MAKE) -C "./yarn/" image-builder
 
 .PHONY: image-dev
 image-dev:  ## Build Dev Image
-	@echo "Building $(BASE_IMAGE_NAME)-dev:$(IMAGE_TAG)"
-	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-dev:$(IMAGE_TAG) -f Dockerfile.dev --load
+	$(MAKE) -C "./pnpm/" image-dev
+	$(MAKE) -C "./yarn/" image-dev
 
 .PHONY: image-prod-config
 image-prod-config:  ## Build Prod Image
-	@echo "Building $(BASE_IMAGE_NAME)-prod-config:$(IMAGE_TAG)"
-	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(BASE_IMAGE_NAME)-prod-config:$(IMAGE_TAG) -f Dockerfile.prod --load
+	$(MAKE) -C "./pnpm/" image-prod-config
+	$(MAKE) -C "./yarn/" image-prod-config
 
 .PHONY: image-main
 image-main:  ## Build main image
-	@echo "Building $(MAIN_IMAGE_NAME):$(IMAGE_TAG)"
-	@docker buildx build . --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t $(MAIN_IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --load
+	$(MAKE) -C "./pnpm/" image-main
+	$(MAKE) -C "./yarn/" image-main
 
 .PHONY: build-images
 build-images:  ## Build Images
