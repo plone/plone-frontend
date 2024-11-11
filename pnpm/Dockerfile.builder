@@ -18,14 +18,14 @@ EOT
 
 RUN <<EOT
     set -e
-    pipx run --no-cache cookieplone sub/frontend_project --no_input __version_plone_volto=$VOLTO_VERSION
+    pipx run --no-cache cookieplone sub/frontend_project --no-input __version_plone_volto=$VOLTO_VERSION
     chown -R node:node /app
 EOT
 
 COPY --chown=node:node volto.config.js /app/
 
 RUN corepack enable
-USER node 
+USER node
 
 WORKDIR /app
 
