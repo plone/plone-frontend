@@ -18,7 +18,7 @@ RUN <<EOT
 EOT
 
 WORKDIR /app
-RUN corepack enable
+RUN npm i -g corepack@latest && corepack enable
 
 USER node
 RUN <<EOT

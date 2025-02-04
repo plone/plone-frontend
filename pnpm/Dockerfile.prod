@@ -18,7 +18,7 @@ RUN <<EOT
     chown -R node:node /app
 EOT
 
-RUN corepack enable
+RUN npm i -g corepack@latest && corepack enable
 
 # Run the image with user node
 USER node

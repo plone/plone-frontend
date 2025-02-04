@@ -24,7 +24,7 @@ EOT
 
 COPY --chown=node:node volto.config.js /app/
 
-RUN corepack enable
+RUN npm i -g corepack@latest && corepack enable
 USER node
 
 WORKDIR /app
