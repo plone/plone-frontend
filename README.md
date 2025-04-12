@@ -26,6 +26,10 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 - `18-yarn`, `18.11-yarn`, `18.11.1-yarn` [(18.x/yarn/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/yarn/Dockerfile)
 - `17`, `17.21`, `17.21.0` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
 
+### Next major version
+
+- `19` [(19.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/19.x/Dockerfile)
+
 ### Older tags
 
 - `16`, `16.33`, `16.33.0` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)

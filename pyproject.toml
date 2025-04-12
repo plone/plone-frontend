@@ -15,7 +15,3 @@ max-complexity=25
 pycodestyle = ["+*"]
 pyflakes = ["+*"]
 "flake8-*" = ["+*"]
-
-[tool.plone-code-analysis]
-paths = "yarn/scripts/helper.py"
-checkers = ["black", "flake8", "isort", ]

@@ -9,7 +9,7 @@ on:
 env:
   BASE_IMAGE_NAME: plone/frontend
   PLATFORMS: linux/amd64,linux/arm64
-  IS_LATEST: true
+  IS_LATEST: false
 
 jobs:
   meta:
@@ -95,66 +95,3 @@ jobs:
       - meta
       - pnpm-builder-image
       - pnpm-prod-conf-image
-
-  yarn-builder-image:
-    needs:
-      - meta
-    uses: ./.github/workflows/image-release.yml
-    with:
-      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
-      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-builder
-      context: ./yarn
-      dockerfile: yarn/Dockerfile.builder
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
-      suffix: -yarn
-    secrets:
-      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
-      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  yarn-prod-conf-image:
-    uses: ./.github/workflows/image-release.yml
-    with:
-      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
-      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod-config
-      context: ./yarn
-      dockerfile: yarn/Dockerfile.prod
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
-      suffix: -yarn
-    secrets:
-      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
-      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
-    needs:
-      - meta
-
-  yarn-dev-image:
-    uses: ./.github/workflows/image-release.yml
-    with:
-      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
-      image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-dev
-      context: ./yarn
-      dockerfile: yarn/Dockerfile.dev
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
-      suffix: -yarn
-    secrets:
-      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
-      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
-    needs:
-      - meta
-      - yarn-builder-image
-
-  yarn-plone-frontend:
-    uses: ./.github/workflows/image-release.yml
-    with:
-      volto-version: ${{ needs.meta.outputs.VOLTO_VERSION }}
-      image-name: plone/plone-frontend
-      context: ./yarn
-      dockerfile: yarn/Dockerfile
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
-      suffix: -yarn
-    secrets:
-      registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
-      registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
-    needs:
-      - meta
-      - yarn-builder-image
-      - yarn-prod-conf-image

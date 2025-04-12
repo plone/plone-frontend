@@ -62,22 +62,18 @@ show-image: ## Print Version
 .PHONY: image-builder
 image-builder:  ## Build Base Image
 	$(MAKE) -C "./pnpm/" image-builder
-	$(MAKE) -C "./yarn/" image-builder
 
 .PHONY: image-dev
 image-dev:  ## Build Dev Image
 	$(MAKE) -C "./pnpm/" image-dev
-	$(MAKE) -C "./yarn/" image-dev
 
 .PHONY: image-prod-config
 image-prod-config:  ## Build Prod Image
 	$(MAKE) -C "./pnpm/" image-prod-config
-	$(MAKE) -C "./yarn/" image-prod-config
 
 .PHONY: image-main
 image-main:  ## Build main image
 	$(MAKE) -C "./pnpm/" image-main
-	$(MAKE) -C "./yarn/" image-main
 
 .PHONY: build-images
 build-images:  ## Build Images
