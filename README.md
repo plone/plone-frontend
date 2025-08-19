@@ -39,7 +39,7 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 ## Usage
 
-Please refer to the [Official Plone Documentation](https://6.dev-docs.plone.org/install/containers/images/frontend.html) for further documentation and examples.
+Please refer to the [Official Plone Documentation](https://6.docs.plone.org/install/containers/images/frontend.html) for further documentation and examples.
 
 ## Contribute
 
