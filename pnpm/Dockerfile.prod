@@ -25,7 +25,6 @@ USER node
 
 # Set working directory to /app
 WORKDIR /app
-RUN corepack use pnpm@9
 
 # Expose default Express port
 EXPOSE 3000
