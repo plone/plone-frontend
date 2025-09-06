@@ -20,3 +20,6 @@ LABEL maintainer="Plone Community <dev@plone.org>" \
 
 # Copy Volto project
 COPY --from=builder /app/ /app/
+
+# Make sure the correct version of pnpm from package.json is installed
+RUN corepack install
