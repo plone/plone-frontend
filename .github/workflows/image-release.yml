@@ -12,9 +12,6 @@ on:
       dockerfile:
         required: true
         type: string
-      platforms:
-        required: true
-        type: string
       is-latest:
         required: false
         type: boolean
@@ -50,7 +47,7 @@ jobs:
     environment: DOCKER_HUB
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Docker meta
         id: meta
@@ -72,9 +69,6 @@ jobs:
             type=raw,value=latest,enable=${{ inputs.is-latest }}
             type=raw,value=${{ inputs.volto-version }}
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -93,7 +87,7 @@ jobs:
           file: ${{ inputs.dockerfile }}
           build-args: |
             VOLTO_VERSION=${{ inputs.volto-version }}
-          # push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
@@ -105,7 +99,7 @@ jobs:
           touch "${{ runner.temp }}/digests/${digest#sha256:}"
 
       - name: Upload digest
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: digests-${{ matrix.platform }}
           path: ${{ runner.temp }}/digests/*
@@ -118,7 +112,7 @@ jobs:
       - release
     steps:
       - name: Download digests
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           path: ${{ runner.temp }}/digests
           pattern: digests-*
