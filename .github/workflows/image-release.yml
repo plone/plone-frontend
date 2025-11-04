@@ -107,7 +107,7 @@ jobs:
       - name: Upload digest
         uses: actions/upload-artifact@v5
         with:
-          name: digests-${{ env.PLATFORM_PAIR }}-${{ github.run_attempt }}
+          name: digests-${{ env.PLATFORM_PAIR }}
           path: ${{ runner.temp }}/digests/*
           if-no-files-found: error
           overwrite: true
