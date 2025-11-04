@@ -107,13 +107,15 @@ jobs:
       - name: Upload digest
         uses: actions/upload-artifact@v5
         with:
-          name: digests-${{ env.PLATFORM_PAIR }}
+          name: digests-${{ env.PLATFORM_PAIR }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/digests/*
           if-no-files-found: error
+          overwrite: true
           retention-days: 1
 
   merge:
     runs-on: ubuntu-latest
+    environment: DOCKER_HUB
     needs:
       - release
     steps:
