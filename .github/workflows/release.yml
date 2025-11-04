@@ -9,6 +9,7 @@ on:
 env:
   BASE_IMAGE_NAME: plone/frontend
   IS_LATEST: false
+  SUFFIX: "-buildtest"
 
 jobs:
   meta:
@@ -39,6 +40,7 @@ jobs:
       context: ./pnpm
       dockerfile: pnpm/Dockerfile.builder
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ env.SUFFIX }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -51,6 +53,7 @@ jobs:
       context: ./pnpm
       dockerfile: pnpm/Dockerfile.prod
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ env.SUFFIX }}
 
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -66,6 +69,8 @@ jobs:
       context: ./pnpm
       dockerfile: pnpm/Dockerfile.dev
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ env.SUFFIX }}
+
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -81,6 +86,8 @@ jobs:
       context: ./pnpm
       dockerfile: pnpm/Dockerfile
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ env.SUFFIX }}
+
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
