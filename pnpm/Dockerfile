@@ -1,7 +1,8 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
 ARG RAZZLE_SUBPATH_PREFIX=
-FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
+ARG SUFFIX
+FROM plone/frontend-builder:${VOLTO_VERSION}${SUFFIX} AS builder
 
 # Build Volto Project and then remove directories not needed for production
 COPY pnpm-workspace.yaml /app/
@@ -13,7 +14,8 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     pnpm install --prod
 EOT
 
-FROM plone/frontend-prod-config:${VOLTO_VERSION} AS base
+ARG SUFFIX
+FROM plone/frontend-prod-config:${VOLTO_VERSION}${SUFFIX} AS base
 ARG RAZZLE_SUBPATH_PREFIX
 
 LABEL maintainer="Plone Community <dev@plone.org>" \

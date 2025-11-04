@@ -8,8 +8,8 @@ on:
 
 env:
   BASE_IMAGE_NAME: plone/frontend
-  PLATFORMS: linux/amd64,linux/arm64
   IS_LATEST: false
+  SUFFIX: "-buildtest"
 
 jobs:
   meta:
@@ -17,21 +17,20 @@ jobs:
     outputs:
       BASE_IMAGE_NAME: ${{ steps.vars.outputs.BASE_IMAGE_NAME }}
       IS_LATEST: ${{ steps.vars.outputs.IS_LATEST }}
-      PLATFORMS: ${{ steps.vars.outputs.PLATFORMS }}
       VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
-
+      SUFFIX: ${{ env.SUFFIX }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set BASE_IMAGE_NAME, IS_LATEST, PLATFORMS, VOLTO_VERSION
+      - name: Set BASE_IMAGE_NAME, IS_LATEST, VOLTO_VERSION
         id: vars
         run: |
           echo "BASE_IMAGE_NAME=$BASE_IMAGE_NAME" >> $GITHUB_OUTPUT
-          echo "PLATFORMS=$PLATFORMS" >> $GITHUB_OUTPUT
           echo "IS_LATEST=$IS_LATEST" >> $GITHUB_OUTPUT
           echo "VOLTO_VERSION=$(cat version.txt)" >> $GITHUB_OUTPUT
-
+          echo "SUFFIX=$SUFFIX" >> $GITHUB_OUTPUT
+          
   pnpm-builder-image:
     needs:
       - meta
@@ -41,8 +40,8 @@ jobs:
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-builder
       context: ./pnpm
       dockerfile: pnpm/Dockerfile.builder
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ needs.meta.outputs.SUFFIX }}
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -54,8 +53,8 @@ jobs:
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-prod-config
       context: ./pnpm
       dockerfile: pnpm/Dockerfile.prod
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ needs.meta.outputs.SUFFIX}}
 
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -70,8 +69,9 @@ jobs:
       image-name: ${{ needs.meta.outputs.BASE_IMAGE_NAME }}-dev
       context: ./pnpm
       dockerfile: pnpm/Dockerfile.dev
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ needs.meta.outputs.SUFFIX }}
+
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -86,8 +86,9 @@ jobs:
       image-name: plone/plone-frontend
       context: ./pnpm
       dockerfile: pnpm/Dockerfile
-      platforms: ${{ needs.meta.outputs.PLATFORMS  }}
       is-latest: ${{ needs.meta.outputs.IS_LATEST == 'true'  }}
+      suffix: ${{ needs.meta.outputs.SUFFIX }}
+
     secrets:
       registry-username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry-password: ${{ secrets.DOCKERHUB_TOKEN }}

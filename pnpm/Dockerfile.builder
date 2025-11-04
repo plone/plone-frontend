@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:22-slim
+FROM node:22-bookworm-slim
 ARG VOLTO_VERSION
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
