@@ -9,7 +9,8 @@ on:
 env:
   BASE_IMAGE_NAME: plone/frontend
   IS_LATEST: false
-  SUFFIX: "-buildtest"
+  # add for example "-buildtest" to not overwrite baseline images
+  SUFFIX: ""
 
 jobs:
   meta:
