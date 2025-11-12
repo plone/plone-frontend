@@ -3,6 +3,7 @@ packages:
   - "core/packages/volto"
   - "core/packages/types"
   - "core/packages/registry"
+  - "core/packages/components"
   - "core/packages/scripts"
   - "core/packages/tsconfig"
   - "core/packages/volto-slate"
