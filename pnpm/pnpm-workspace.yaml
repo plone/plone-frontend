@@ -5,6 +5,8 @@ packages:
   - "core/packages/registry"
   - "core/packages/components"
   - "core/packages/scripts"
+  - "core/packages/volto-razzle"
+  - "core/packages/volto-babel-preset-razzle"
   - "core/packages/tsconfig"
   - "core/packages/volto-slate"
   - "core/packages/coresandbox"
