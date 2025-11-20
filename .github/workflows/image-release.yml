@@ -104,6 +104,10 @@ jobs:
           digest="${{ steps.build.outputs.digest }}"
           touch "${{ runner.temp }}/digests/${digest#sha256:}"
 
+      - name: List digest directory
+        working-directory: ${{ runner.temp }}/digests
+        run: ls -la
+
       - name: Upload digest
         uses: actions/upload-artifact@v5
         with:
@@ -125,6 +129,10 @@ jobs:
           path: ${{ runner.temp }}/digests
           pattern: digests-*
           merge-multiple: true
+
+      - name: List digest directory
+        working-directory: ${{ runner.temp }}/digests
+        run: ls -la
 
       - name: Login to Registry
         uses: docker/login-action@v3
