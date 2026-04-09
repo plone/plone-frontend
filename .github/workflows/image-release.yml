@@ -47,7 +47,7 @@ jobs:
     environment: DOCKER_HUB
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Prepare artifact key
         run: |
@@ -94,7 +94,7 @@ jobs:
             VOLTO_VERSION=${{ inputs.volto-version }}
             SUFFIX=${{ inputs.suffix }}
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ inputs.image-name }} 
+          tags: ${{ inputs.image-name }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true,name=${{ inputs.image-name }}
 
