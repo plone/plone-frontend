@@ -22,7 +22,7 @@ jobs:
       SUFFIX: ${{ env.SUFFIX }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set BASE_IMAGE_NAME, IS_LATEST, VOLTO_VERSION
         id: vars
@@ -31,7 +31,7 @@ jobs:
           echo "IS_LATEST=$IS_LATEST" >> $GITHUB_OUTPUT
           echo "VOLTO_VERSION=$(cat version.txt)" >> $GITHUB_OUTPUT
           echo "SUFFIX=$SUFFIX" >> $GITHUB_OUTPUT
-          
+
   pnpm-builder-image:
     needs:
       - meta
