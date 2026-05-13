@@ -32,7 +32,7 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 ### Older tags
 
-- `16`, `16.34`, `16.34.1` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
+- `16`, `16.34`, `16.34.0` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 - `15, 15.16, 15.16.0` [(15.16.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.16.0/Dockerfile)
 - `14, 14.10, 14.10.0, 14.10.0-node16` [(/14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.10/14.10.0/Dockerfile.node16)
 - `13, 13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/13/13.15/13.15.1/Dockerfile.node14)
