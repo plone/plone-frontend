@@ -22,17 +22,14 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 ## Supported tags and respective Dockerfile links
 
-- `18`, `18.24`, `18.24.0`, `latest` [(18.x/pnpm/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/pnpm/Dockerfile)
-- `18-yarn`, `18.24-yarn`, `18.24.0-yarn` [(18.x/yarn/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/yarn/Dockerfile)
-- `17`, `17.22`, `17.22.1` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
-
-### Next major version
-
-- `19` [(19.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/19.x/Dockerfile)
+- `19`, `19.0`, `19.0.0`, `latest` [(19.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/19.x/Dockerfile)
+- `18`, `18.34`, `18.34.0` [(18.x/pnpm/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/pnpm/Dockerfile)
+- `18-yarn`, `18.34-yarn`, `18.34.0-yarn` [(18.x/yarn/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/yarn/Dockerfile)
 
 ### Older tags
 
-- `16`, `16.33`, `16.33.0` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
+- `17`, `17.23`, `17.23.0` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
+- `16`, `16.34`, `16.34.1` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
 - `15, 15.16, 15.16.0` [(15.16.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.16.0/Dockerfile)
 - `14, 14.10, 14.10.0, 14.10.0-node16` [(/14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.10/14.10.0/Dockerfile.node16)
 - `13, 13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/13/13.15/13.15.1/Dockerfile.node14)

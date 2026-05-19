@@ -8,7 +8,7 @@ on:
 
 env:
   BASE_IMAGE_NAME: plone/frontend
-  IS_LATEST: false
+  IS_LATEST: true
   # add for example "-buildtest" to not overwrite baseline images
   SUFFIX: ""
 
