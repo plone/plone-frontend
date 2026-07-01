@@ -22,7 +22,7 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 ## Supported tags and respective Dockerfile links
 
-- `19`, `19.1`, `19.1.4`, `latest` [(19.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/19.x/Dockerfile)
+- `19`, `19.1`, `19.1.5`, `latest` [(19.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/19.x/Dockerfile)
 - `18`, `18.34`, `18.34.0` [(18.x/pnpm/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/pnpm/Dockerfile)
 - `18-yarn`, `18.34-yarn`, `18.34.0-yarn` [(18.x/yarn/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/yarn/Dockerfile)
 
