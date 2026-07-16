@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
+ARG SUFFIX=-yarn
 FROM plone/frontend-builder:${VOLTO_VERSION}-yarn AS builder
 
 # Build Volto Project and then remove directories not needed for production
@@ -9,7 +10,7 @@ RUN <<EOT
     rm -rf cache omelette .yarn/cache
 EOT
 
-FROM plone/frontend-prod-config:${VOLTO_VERSION}-yarn AS base
+FROM plone/frontend-prod-config:${VOLTO_VERSION}${SUFFIX} AS base
 
 LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.name="plone-frontend" \

@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
-FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
+ARG SUFFIX
+FROM plone/frontend-builder:${VOLTO_VERSION}${SUFFIX} AS builder
 
 # Build Volto Project and then remove directories not needed for production
 COPY pnpm-workspace.yaml /app/
