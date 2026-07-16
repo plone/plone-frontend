@@ -10,14 +10,14 @@ on:
 
 jobs:
   update-description:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment: DOCKER_HUB
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Update repo description
-        uses: peter-evans/dockerhub-description@v4
+        uses: peter-evans/dockerhub-description@v5
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
