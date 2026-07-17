@@ -12,7 +12,7 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     pnpm install --prod
 EOT
 
-FROM plone/frontend-prod-config:${VOLTO_VERSION} AS base
+FROM plone/frontend-prod-config:${VOLTO_VERSION}${SUFFIX} AS base
 
 LABEL maintainer="Plone Community <dev@plone.org>" \
       org.label-schema.name="plone-frontend" \

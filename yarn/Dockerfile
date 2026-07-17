@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
 ARG SUFFIX=-yarn
-FROM plone/frontend-builder:${VOLTO_VERSION}-yarn AS builder
+FROM plone/frontend-builder:${VOLTO_VERSION}${SUFFIX} AS builder
 
 # Build Volto Project and then remove directories not needed for production
 RUN <<EOT
