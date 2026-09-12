@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="Plone Logo" width="200px" src="https://raw.githubusercontent.com/plone/plone-frontend/15.x/docs/logo.png">
+    <img alt="Plone Logo" width="200px" src="https://raw.githubusercontent.com/plone/container-frontend/15.x/docs/logo.png">
 </p>
 
 <h1 align="center">
@@ -11,8 +11,8 @@
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/plone/plone-frontend?sort=semver)](https://hub.docker.com/r/plone/plone-frontend)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/plone/plone-frontend?sort=semver)](https://hub.docker.com/r/plone/plone-frontend)
 
-![GitHub Repo stars](https://img.shields.io/github/stars/plone/plone-frontend?style=flat-square)
-[![license badge](https://img.shields.io/github/license/plone/plone-frontend)](./LICENSE)
+![GitHub Repo stars](https://img.shields.io/github/stars/plone/container-frontend?style=flat-square)
+[![license badge](https://img.shields.io/github/license/plone/container-frontend)](./LICENSE)
 
 </div>
 
@@ -22,17 +22,17 @@ To check and report issues and contribute to Volto, See [plone/volto](https://gi
 
 ## Supported tags and respective Dockerfile links
 
-- `19`, `19.4`, `19.4.1`, `latest` [(19.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/19.x/Dockerfile)
-- `18`, `18.36`, `18.36.0` [(18.x/pnpm/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/pnpm/Dockerfile)
-- `18-yarn`, `18.36-yarn`, `18.36.0-yarn` [(18.x/yarn/Dockerfile)](https://github.com/plone/plone-frontend/blob/18.x/yarn/Dockerfile)
+- `19`, `19.4`, `19.4.1`, `latest` [(19.x/Dockerfile)](https://github.com/plone/container-frontend/blob/19.x/Dockerfile)
+- `18`, `18.36`, `18.36.0` [(18.x/pnpm/Dockerfile)](https://github.com/plone/container-frontend/blob/18.x/pnpm/Dockerfile)
+- `18-yarn`, `18.36-yarn`, `18.36.0-yarn` [(18.x/yarn/Dockerfile)](https://github.com/plone/container-frontend/blob/18.x/yarn/Dockerfile)
 
 ### Older tags
 
-- `17`, `17.23`, `17.23.0` [(17.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/17.x/Dockerfile)
-- `16`, `16.34`, `16.34.2` [(16.x/Dockerfile)](https://github.com/plone/plone-frontend/blob/16.x/Dockerfile)
-- `15, 15.16, 15.16.0` [(15.16.0/Dockerfile)](https://github.com/plone/plone-frontend/blob/v15.16.0/Dockerfile)
-- `14, 14.10, 14.10.0, 14.10.0-node16` [(/14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.10/14.10.0/Dockerfile.node16)
-- `13, 13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/plone-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/13/13.15/13.15.1/Dockerfile.node14)
+- `17`, `17.23`, `17.23.0` [(17.x/Dockerfile)](https://github.com/plone/container-frontend/blob/17.x/Dockerfile)
+- `16`, `16.34`, `16.34.2` [(16.x/Dockerfile)](https://github.com/plone/container-frontend/blob/16.x/Dockerfile)
+- `15, 15.16, 15.16.0` [(15.16.0/Dockerfile)](https://github.com/plone/container-frontend/blob/v15.16.0/Dockerfile)
+- `14, 14.10, 14.10.0, 14.10.0-node16` [(/14/14.10/14.10.0/Dockerfile.node16)](https://github.com/plone/container-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/14/14.10/14.10.0/Dockerfile.node16)
+- `13, 13.15, 13.15.1-node14` [(13/13.15/13.15.1/Dockerfile.node14)](https://github.com/plone/container-frontend/blob/5419f28e2d00788ca042c49cc44df83b6785ee3a/13/13.15/13.15.1/Dockerfile.node14)
 
 ## Usage
 
@@ -40,8 +40,8 @@ Please refer to the [Official Plone Documentation](https://6.dev-docs.plone.org/
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/plone/plone-frontend/issues)
-- [Source Code](https://github.com/plone/plone-frontend/)
+- [Issue Tracker](https://github.com/plone/container-frontend/issues)
+- [Source Code](https://github.com/plone/container-frontend/)
 - [Documentation](https://6.docs.plone.org/install/containers/images/frontend.html)
 
 Please **DO NOT** commit to version branches directly. Even for the smallest and most trivial fix.

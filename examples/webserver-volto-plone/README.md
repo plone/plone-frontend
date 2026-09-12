@@ -5,8 +5,8 @@
 Clone this repository and go to the `examples/webserver-volto-plone` folder
 
 ```shell
-git clone https://github.com/plone/plone-frontend.git
-cd plone-frontend/examples/webserver-volto-plone
+git clone https://github.com/plone/container-frontend.git
+cd container-frontend/examples/webserver-volto-plone
 ```
 
 Start the solution with `docker-compose` (or `docker compose` for newer versions)
